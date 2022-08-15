@@ -8,25 +8,35 @@
     <meta name="keywords" content="Touch type, type, game">
     <meta name="author" content="George Osborn, Code Institute student">
     <link rel="stylesheet" href="assets/css/style.css">
+    <script src="https://kit.fontawesome.com/bbfccb4c46.js" crossorigin="anonymous"></script>
     <title>The Touch Type Game</title>
 </head>
 <body id="home-page">
     <header>xxxxxxxxx</header>
-        <span class="fail">x</span>
-        <span class="fail">x</span>
-        <span class="fail">x</span>
-        <span class="fail">x</span>
-        <span class="fail">x</span>
+        <span class="fail"><i class="fa-solid fa-circle-xmark"></i></span>
+        <span class="fail"><i class="fa-solid fa-circle-xmark"></i></span>
+        <span class="fail"><i class="fa-solid fa-circle-xmark"></i></span>
+        <span class="fail"><i class="fa-solid fa-circle-xmark"></i></span>
+        <span class="fail"><i class="fa-solid fa-circle-xmark"></i></span>
     
-    <aside id="scoreboard">x</aside>
-    <div id="menu-game-screen">
+    <aside id="scoreboard">
+        <ol id="leaderboard">
+            <li>Name</li>
+            <li>Name</li>
+            <li>Name</li>
+            <li>Name</li>
+        </ol>
+    </aside>
+    <div id="menu-game-screen" action="https://formdump.codeinstitute.net/" method="post">
         <form id="name-select">
-            <input type="text">
-            <input type="submit">
+            <div id="input">
+                <label for="username">Username:</label>
+                <input id="username" name="username" type="text" required>
+            </div>
+            <input type="submit" aria-label="submit">
         </form>
     </div>
     <div id="counter">10.5</div>
-
-    
+    <script src="assets/javascript/script.js"></script>
 </body>
 </html>

@@ -11,7 +11,7 @@
     <script src="https://kit.fontawesome.com/bbfccb4c46.js" crossorigin="anonymous"></script>
     <title>The Touch Type Game</title>
 </head>
-<body id="home-page">
+<body id="home-page" onkeydown="keyPressed(event);">
     <header>xxxxxxxxx</header>
         <span class="fail"><i class="fa-solid fa-circle-xmark"></i></span>
         <span class="fail"><i class="fa-solid fa-circle-xmark"></i></span>
@@ -27,8 +27,8 @@
             <li>Name</li>
         </ol>
     </aside>
-    <div id="menu-game-screen" action="https://formdump.codeinstitute.net/" method="post">
-        <form id="name-select">
+    <div id="menu-game-screen">
+        <form id="name-select" action="https://formdump.codeinstitute.net/" method="post">
             <div id="input">
                 <label for="username">Username:</label>
                 <input id="username" name="username" type="text" required>

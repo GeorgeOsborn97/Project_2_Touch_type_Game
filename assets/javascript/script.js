@@ -32,11 +32,17 @@ form.addEventListener('submit', usernameEntry);
 
 function startTheGame(event) {
     function newKey() {
+        timesRun += 1
+        if (timesRun === 10){
+            clearInterval(interval)
+        }
         let i = Math.floor(Math.random() * (33-0+1));
         console.log(i);
         title.innerHTML = keyArray[i];
+        
     }
-    setInterval(newKey, 2000);   
+    var timesRun = 0
+    var interval = setInterval(newKey, 1000); 
     instructions.remove();
     playButton.remove();
     function keyPress(event) {

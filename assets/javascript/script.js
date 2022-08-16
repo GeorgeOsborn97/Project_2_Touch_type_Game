@@ -11,6 +11,7 @@ function usernameEntry(event) {
     form.remove();
     let title = document.createElement("h1");
     title.setAttribute('id', 'title');
+    title.style.color = "red"
     let instructions = document.createElement("p");
     instructions.setAttribute('id', 'instructions')
     let play = document.createElement("button");
@@ -33,16 +34,29 @@ form.addEventListener('submit', usernameEntry);
 function startTheGame(event) {
     function newKey() {
         timesRun += 1
-        if (timesRun === 10){
-            clearInterval(interval)
+        console.log(timesRun)
+        if (timesRun === 40){
+            clearInterval(interval);            
         }
+        roundCount += 1
+        if (roundCount === 10){
+            sec = sec * 0.9
+            roundCount = 0
+        }
+       
         let i = Math.floor(Math.random() * (33-0+1));
         console.log(i);
         title.innerHTML = keyArray[i];
-        
+        if(title.style.color == "red"){
+            title.style.color = "blue"
+        } else {
+            title.style.color = "red"
+        }
     }
     var timesRun = 0
-    var interval = setInterval(newKey, 1000); 
+    var roundCount = 0
+    var sec = 1000
+    var interval = setInterval(newKey, sec); 
     instructions.remove();
     playButton.remove();
     function keyPress(event) {

@@ -31,6 +31,8 @@ let form = document.getElementById("name-select");
 form.addEventListener('submit', usernameEntry);
 //the game runnning function that generates a random key, tracks the key pressed and provides on out come eitherway. when 5 mis clicks are counted the game ends, or if the game runs 40 cycles through
 function startTheGame(event) {
+    title.style.padding = "80px, 80px, 80px, 80px"
+    title.style.fontSize = "120px" 
     function newKey() {
         timesRun += 1
         console.log(timesRun)
@@ -87,6 +89,7 @@ body.addEventListener('keydown', keyPress);
 }
 // end game function is called when the count = 40, logs the users name and score. needs a sort function  
 function endGame() {
+    title.remove();
     console.log("end reached");
     let score = document.getElementById("counter");
     var finalScore = score.innerHTML

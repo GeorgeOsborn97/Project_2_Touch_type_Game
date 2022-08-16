@@ -1,13 +1,13 @@
+// Define the arrays that will be required
 let keyArray = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', '1', '2', '3', '4', '5', '6', '7', '8', '9']
-
+let userArray= ['Mark', 'George', 'Ben', 'Chris']
+//First function that executes when a username is submitted. It's Purpose is to Remove the Form element, add an <li> element with the inputted name.
+//And create an instructions page witha play button that will begin the game.
 function usernameEntry(event) {
     event.preventDefault();
     let username = document.getElementById("username");
     let user = username.value;
-    let leaderboard = document.getElementById("leaderboard");
-    let newName = document.createElement("li");
-    newName.innerHTML = user
-    leaderboard.appendChild(newName);
+    userArray.push(user)
     form.remove();
     let title = document.createElement("h1");
     title.setAttribute('id', 'title');
@@ -36,7 +36,9 @@ function startTheGame(event) {
         timesRun += 1
         console.log(timesRun)
         if (timesRun === 40){
-            clearInterval(interval);            
+            clearInterval(interval);  
+            body.removeEventListener('keydown', keyPress); 
+            endGame();     
         }
         roundCount += 1
         if (roundCount === 10){
@@ -61,12 +63,27 @@ function startTheGame(event) {
     playButton.remove();
     function keyPress(event) {
         if (event.key == title.innerHTML) {
-            console.log(event.key)
-            let score = document.getElementById("counter")
+            console.log(event.key);
+            let score = document.getElementById("counter");
             score.innerHTML++
         }
     }
-    let body = document.getElementById('home-page')
-body.addEventListener('keydown', keyPress)
+    let body = document.getElementById('home-page');
+body.addEventListener('keydown', keyPress);
 }
+  
+function endGame() {
+    console.log("end reached");
+    let score = document.getElementById("counter");
+    var finalScore = score.innerHTML
+    console.log(userArray)
+    let x = userArray.push() - 1
+    console.log(userArray[x] + ': ' + finalScore)
+    let leaderboard = document.getElementById("leaderboard");
+    let newName = document.createElement("li");
+    newName.innerHTML = userArray[x] + ': ' + finalScore;
+    newName.setAttribute('id', 'name1');
+    leaderboard.appendChild(newName);
+    
 
+}

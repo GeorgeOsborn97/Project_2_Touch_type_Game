@@ -26,11 +26,10 @@ function usernameEntry(event) {
     screen.appendChild(title);
     screen.appendChild(instructions);
     screen.appendChild(play);
-
 }
 let form = document.getElementById("name-select");
 form.addEventListener('submit', usernameEntry);
-
+//the game runnning function that generates a random key, tracks the key pressed and provides on out come eitherway. when 5 mis clicks are counted the game ends, or if the game runs 40 cycles through
 function startTheGame(event) {
     function newKey() {
         timesRun += 1
@@ -64,7 +63,7 @@ function startTheGame(event) {
     var interval = setInterval(newKey, sec); 
     instructions.remove();
     playButton.remove();
-
+//the function that tracks and generates keys, also tracking and counting fails
     function keyPress(event) {
         if (event.key == title.innerHTML) {
             console.log(event.key);
@@ -97,6 +96,36 @@ function endGame() {
     let leaderboard = document.getElementById("leaderboard");
     let newName = document.createElement("li");
     newName.innerHTML = userArray[x] + ': ' + finalScore;
-    newName.setAttribute('id', 'name1');
     leaderboard.appendChild(newName);
+    //create a button that returns back to the original user inout for replayability
+    let returnToMenu = document.createElement("button");
+    returnToMenu.style.height = '50px';
+    returnToMenu.style.width = '100px';
+    returnToMenu.innerHTML = "PLAY AGAIN";
+    returnToMenu.setAttribute('onclick', 'resetMenu();');
+    returnToMenu.setAttribute('id', 'menuButton');
+    let screen = document.getElementById("menu-game-screen");
+    screen.appendChild(returnToMenu);
+}
+
+function resetMenu(event) {
+    title.remove();
+    menuButton.remove();
+    let newMenu = document.createElement('form');
+    newMenu.setAttribute('id', 'name-select');
+    newMenu.setAttribute('action', 'https://formdump.codeinstitute.net/');
+    newMenu.setAttribute('method', 'post'); 
+    newMenu.innerHTML = 
+    `<div id="input">
+        <label for="username">Username:</label>
+        <input id="username" name="username" type="text" required>
+    </div>
+    <input type="submit" aria-label="submit">`
+    let screen = document.getElementById("menu-game-screen");
+    screen.appendChild(newMenu);
+    for (let i = 1; i < 6; i++){
+        console.log(i)
+    let failReset = document.getElementsByClassName('fail');
+    failReset.namedItem(i).style.color = "greenyellow"
+    }
 }

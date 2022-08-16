@@ -40,6 +40,7 @@ function startTheGame(event) {
             body.removeEventListener('keydown', keyPress); 
             endGame();     
         }
+        //this is not functioning at the moment, look in the future at increasing speed every 10 rounds
         roundCount += 1
         if (roundCount === 10){
             sec = sec * 0.9
@@ -58,20 +59,34 @@ function startTheGame(event) {
     var timesRun = 0
     var roundCount = 0
     var sec = 1000
+    var failCount = 0
+    failArray = []
     var interval = setInterval(newKey, sec); 
     instructions.remove();
     playButton.remove();
+
     function keyPress(event) {
         if (event.key == title.innerHTML) {
             console.log(event.key);
             let score = document.getElementById("counter");
             score.innerHTML++
+        } else {
+            failCount += 1
+            let failSigns = document.getElementById(failCount)
+            failSigns.style.color = "red"
+            failArray.push(failCount)
+            if(failArray.push() == 5){
+                clearInterval(interval);  
+            body.removeEventListener('keydown', keyPress); 
+            endGame();     
+            }
+
         }
     }
     let body = document.getElementById('home-page');
 body.addEventListener('keydown', keyPress);
 }
-  
+// end game function is called when the count = 40, logs the users name and score. needs a sort function  
 function endGame() {
     console.log("end reached");
     let score = document.getElementById("counter");
@@ -84,6 +99,4 @@ function endGame() {
     newName.innerHTML = userArray[x] + ': ' + finalScore;
     newName.setAttribute('id', 'name1');
     leaderboard.appendChild(newName);
-    
-
 }

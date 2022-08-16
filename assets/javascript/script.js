@@ -31,13 +31,22 @@ let form = document.getElementById("name-select");
 form.addEventListener('submit', usernameEntry);
 
 function startTheGame(event) {
-    title.innerHTML = Math.random() * 1000;
+    function newKey() {
+        let i = Math.floor(Math.random() * (33-0+1));
+        console.log(i);
+        title.innerHTML = keyArray[i];
+    }
+    setInterval(newKey, 2000);   
     instructions.remove();
     playButton.remove();
-
-}
-function randomKey(){
-   let i = Math.random() * 100
-   keyArray[i]
+    function keyPress(event) {
+        if (event.key == title.innerHTML) {
+            console.log(event.key)
+            let score = document.getElementById("counter")
+            score.innerHTML++
+        }
+    }
+    let body = document.getElementById('home-page')
+body.addEventListener('keydown', keyPress)
 }
 

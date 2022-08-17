@@ -1,6 +1,52 @@
 // Define the arrays that will be required
 let keyArray = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', '1', '2', '3', '4', '5', '6', '7', '8', '9']
 let userArray= ['Mark', 'George', 'Ben', 'Chris']
+// styling for the first and last fail blocks as css struggles to target id if its numerical
+let firstFail = document.getElementById('1')
+let fifthFail = document.getElementById('5')
+firstFail.style.marginLeft = '10%'
+fifthFail.style.marginRight = '15%'
+// responsive styling for different screen sizes
+var mq = window.matchMedia( "(max-width: 450px)" );
+if(mq.matches) {
+    firstFail.style.marginLeft = '10%'
+    fifthFail.style.marginRight = '10vw'
+    let scoreboard = document.getElementById('scoreboard');
+    scoreboard.remove();
+    newScoreboard = document.createElement('div');
+    newScoreboard.innerHTML = 
+    `<table id="leaderboard">
+    <tr>
+        <th id="leaderboard-heading">Leaderboard</th>
+    </tr>
+    <tr>
+        <td class="table-data">Mark:</td>
+        <td class="table-data">32</td>
+    </tr>
+    <tr>
+        <td class="table-data">George:</td>
+        <td class="table-data">28</td>
+    </tr>
+    <tr>
+        <td class="table-data">Ben:</td>
+        <td class="table-data">27</td>
+    </tr>
+    <tr>
+        <td class="table-data">Chris:</td>
+        <td class="table-data">24</td>
+    </tr>
+</table>`
+    let body = document.getElementById('home-page');
+    body.appendChild(newScoreboard);
+    body.style.width = "95vw"
+}
+var mq = window.matchMedia( "(max-width: 450px)" );
+if(mq.matches) {
+    firstFail.style.marginLeft = '8%'
+    fifthFail.style.marginRight = '5%'
+}
+
+
 //First function that executes when a username is submitted. It's Purpose is to Remove the Form element, add an <li> element with the inputted name.
 //And create an instructions page witha play button that will begin the game.
 function usernameEntry(event) {
@@ -51,13 +97,15 @@ function startTheGame(event) {
             roundCount = 0
         }
        //This condition produces the random key and chnages the color every new key in order to keep a change if the random key is the same as the last
-        let i = Math.floor(Math.random() * (33-0+1));
-        console.log(i);
-        title.innerHTML = keyArray[i];
-        if(title.style.color == "red"){
-            title.style.color = "blue"
-        } else {
-            title.style.color = "red"
+       if (timesRun != 40){
+            let i = Math.floor(Math.random() * (33-0+1));
+            console.log(i);
+            title.innerHTML = keyArray[i];
+            if(title.style.color == "red"){
+                title.style.color = "blue"
+            } else {
+                title.style.color = "red"
+            }
         }
     }
     var timesRun = 0
@@ -81,8 +129,7 @@ function startTheGame(event) {
             failSigns.style.borderColor = "black"
             failArray.push(failCount)
             if(failArray.push() == 5){
-                let newScreen = document.getElementById('menu-game-screen');
-            newScreen.style.backgroundImage = "url('assets/images/gameOver.jpg')";
+                
                 clearInterval(interval);  
             body.removeEventListener('keydown', keyPress); 
             endGame();     
@@ -95,6 +142,9 @@ body.addEventListener('keydown', keyPress);
 }
 // end game function is called when the count = 40, logs the users name and score. needs a sort function  
 function endGame() {
+   
+    let newScreen = document.getElementById('menu-game-screen');
+    newScreen.style.backgroundImage = "url('assets/images/gameOver.jpg')";
     title.remove();
     console.log("end reached");
     let score = document.getElementById("counter");

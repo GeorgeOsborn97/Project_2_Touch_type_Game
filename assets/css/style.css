@@ -9,13 +9,14 @@ header{
 }
 .fail{
     border-style:solid;
+    border-radius: 50%;
     border-color:white;
     border-width:2px;
-    padding:20px;
+    padding:10px;
     margin-right:40px;
     margin-top:10px;
     color:greenyellow;
-    font-size:larger;
+    font-size:x-large;
 }
 #menu-game-screen{
     width:350px;
@@ -42,18 +43,31 @@ header{
 #scoreboard{
     width:150px;
     height:350px;
-    border-width:5px;
+    border-width:3px;
     border-color:white;
     border-style: solid;
+    border-radius: 10px;
     margin-left:5%;
     margin-right:5px;
     margin-top:100px;
     padding-right:5px;
-    text-align:center;
+    text-align:left;
     float:left;
 }
 #leaderboard{
     color:white;
+}
+#leaderboard-heading{
+    width:100%;
+    padding-right:0px;
+    padding-left:25px;
+    text-align:center;
+    font-size:larger;
+    text-decoration-line:underline;
+    text-shadow: 10px;
+}
+.table-data{
+    width:50%;
 }
 #counter{
     width:350px;

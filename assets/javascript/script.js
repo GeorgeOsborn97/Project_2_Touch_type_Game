@@ -7,32 +7,35 @@ function usernameEntry(event) {
     event.preventDefault();
     let username = document.getElementById("username");
     let user = username.value;
-    userArray.push(user)
-    form.remove();
+        userArray.push(user)
+        form.remove();
     let title = document.createElement("h1");
-    title.setAttribute('id', 'title');
-    title.style.color = "red"
+        title.setAttribute('id', 'title');
+        title.style.color = "red"
     let instructions = document.createElement("p");
-    instructions.setAttribute('id', 'instructions')
+        instructions.setAttribute('id', 'instructions')
     let play = document.createElement("button");
-    play.style.height = '50px';
-    play.style.width = '100px';
-    play.innerHTML = "PLAY";
-    play.setAttribute('onclick', 'startTheGame();')
-    play.setAttribute('id', 'playButton');
-    title.innerHTML = "Title"
-    instructions.innerHTML = "instructions to be added"
+        play.style.height = '50px';
+        play.style.width = '100px';
+        play.innerHTML = "PLAY";
+        play.setAttribute('onclick', 'startTheGame();')
+        play.setAttribute('id', 'playButton');
+        title.innerHTML = "Title"
+        instructions.innerHTML = "instructions to be added"
     let screen = document.getElementById("menu-game-screen");
-    screen.appendChild(title);
-    screen.appendChild(instructions);
-    screen.appendChild(play);
+        screen.appendChild(title);
+        screen.appendChild(instructions);
+        screen.appendChild(play);
 }
 let form = document.getElementById("name-select");
-form.addEventListener('submit', usernameEntry);
+    form.addEventListener('submit', usernameEntry);
 //the game runnning function that generates a random key, tracks the key pressed and provides on out come eitherway. when 5 mis clicks are counted the game ends, or if the game runs 40 cycles through
 function startTheGame(event) {
     title.style.padding = "80px, 80px, 80px, 80px"
     title.style.fontSize = "120px" 
+    title.innerHTML = "GO!"
+    //This function produces the random key and chnages the color every new key in order to keep a change if the random key is the same as the last
+    // it also keeps a track of the amount of keys shown when the count hits 40 the game ends.
     function newKey() {
         timesRun += 1
         console.log(timesRun)
@@ -47,7 +50,7 @@ function startTheGame(event) {
             sec = sec * 0.9
             roundCount = 0
         }
-       
+       //This condition produces the random key and chnages the color every new key in order to keep a change if the random key is the same as the last
         let i = Math.floor(Math.random() * (33-0+1));
         console.log(i);
         title.innerHTML = keyArray[i];
@@ -75,8 +78,11 @@ function startTheGame(event) {
             failCount += 1
             let failSigns = document.getElementById(failCount)
             failSigns.style.color = "red"
+            failSigns.style.borderColor = "black"
             failArray.push(failCount)
             if(failArray.push() == 5){
+                let newScreen = document.getElementById('menu-game-screen');
+            newScreen.style.backgroundImage = "url('assets/images/gameOver.jpg')";
                 clearInterval(interval);  
             body.removeEventListener('keydown', keyPress); 
             endGame();     
@@ -93,39 +99,65 @@ function endGame() {
     console.log("end reached");
     let score = document.getElementById("counter");
     var finalScore = score.innerHTML
-    console.log(userArray)
+        console.log(userArray)
     let x = userArray.push() - 1
-    console.log(userArray[x] + ': ' + finalScore)
+        console.log(userArray[x] + ': ' + finalScore)
     let leaderboard = document.getElementById("leaderboard");
-    let newName = document.createElement("li");
-    newName.innerHTML = userArray[x] + ': ' + finalScore;
-    leaderboard.appendChild(newName);
+    let newRow = document.createElement("tr")
+        leaderboard.appendChild(newRow)
+        newRow.setAttribute('id', 'userInput')
+    const gameData = document.querySelector('#userInput')
+        let newName = document.createElement("td");
+        newName.innerHTML = userArray[x] + ':';
+        gameData.appendChild(newName)
+        let newScore = document.createElement("td");
+        newScore.innerHTML = finalScore
+        console.log(newScore)
+        gameData.appendChild(newScore);
     //create a button that returns back to the original user inout for replayability
-    let returnToMenu = document.createElement("button");
-    returnToMenu.style.height = '50px';
-    returnToMenu.style.width = '100px';
-    returnToMenu.innerHTML = "PLAY AGAIN";
-    returnToMenu.setAttribute('onclick', 'resetMenu();');
-    returnToMenu.setAttribute('id', 'menuButton');
-    let screen = document.getElementById("menu-game-screen");
-    screen.appendChild(returnToMenu);
+    let returnToMenuDiv = document.getElementById("menu-game-screen");
+        returnToMenuDiv.setAttribute('onclick', 'resetMenu();');
+        returnToMenuDiv.setAttribute('onmouseenter', 'hover();')
+        returnToMenuDiv.setAttribute('onmouseleave', 'hoverDown();')
+    let returnToMenu = document.getElementById("menu-game-screen");
+    returnToMenu.addEventListener('onclick', resetMenu)
 }
 
+function hover(event) {
+    if(returnToMenu.style.backgroundImage != null){
+        let returnToMenuDiv = document.getElementById("menu-game-screen");
+        returnToMenuDiv.style.scale = '1.05'
+    }
+}
+function hoverDown(event) {
+    if (returnToMenu.style.backgroundImage != null){
+        let returnToMenuDiv = document.getElementById("menu-game-screen");
+        returnToMenuDiv.style.scale = '1'
+    }
+}
+let returnToMenu = document.getElementById("menu-game-screen");
+    returnToMenu.addEventListener('onmouseenter', hover)
+    returnToMenu.addEventListener('onmouseleave', hoverDown)
+
 function resetMenu(event) {
-    title.remove();
-    menuButton.remove();
+    let returnToMenu = document.getElementById("menu-game-screen");
+    returnToMenu.removeAttribute('onclick', 'resetMenu();')
+    returnToMenu.removeAttribute('onmouseenter', 'hover();');
+    returnToMenu.removeAttribute('onmouseleave', 'hoverDown();');
+    returnToMenu.style.scale = '1'
     let newMenu = document.createElement('form');
-    newMenu.setAttribute('id', 'name-select');
-    newMenu.setAttribute('action', 'https://formdump.codeinstitute.net/');
-    newMenu.setAttribute('method', 'post'); 
-    newMenu.innerHTML = 
+        newMenu.setAttribute('id', 'name-select');
+        newMenu.setAttribute('action', 'https://formdump.codeinstitute.net/');
+        newMenu.setAttribute('method', 'post'); 
+        newMenu.innerHTML = 
     `<div id="input">
         <label for="username">Username:</label>
         <input id="username" name="username" type="text" required>
     </div>
     <input type="submit" aria-label="submit">`
     let screen = document.getElementById("menu-game-screen");
-    screen.appendChild(newMenu);
+        screen.style.backgroundImage = null
+        screen.appendChild(newMenu);
     for (let i = 1; i < 6; i++){
         console.log(i)
     let failReset = document.getElementsByClassName('fail');

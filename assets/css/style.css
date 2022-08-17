@@ -1,5 +1,6 @@
 body{
-    background-image:url("../images/stars.jpg")
+    background-image:url("../images/stars.jpg");
+    width:100vw;
 }
 header{
     text-align:center;
@@ -81,4 +82,90 @@ header{
     text-align:center;
     color:white;
     font-size:50px;
+}
+
+@media screen and (max-width:1200px){
+
+}
+@media screen and (max-width:450px){
+    .fail{
+        border-style:solid;
+        border-radius: 50%;
+        border-color:white;
+        border-width:2px;
+        padding:10px;
+        margin-right:10px;
+        margin-top:10px;
+        color:greenyellow;
+        font-size:x-large;
+    }
+    #menu-game-screen{
+        width:350px;
+        height:350px;
+        border-radius:50%;
+        border-width:5px;
+        border-color:white;
+        border-style: solid;
+        background-color:rgba(240, 255, 255, 0.356);
+        margin-left:20px;
+        margin-right:5px;
+        margin-top:60px;
+        margin-bottom:5px;
+        text-align:center;
+    }
+    #counter{
+        width:350px;
+        height:50px;
+        border-width:5px;
+        border-color:white;
+        border-style: solid;
+        margin-left:20px;
+        margin-right:5px;
+        margin-top:10px;
+        text-align:center;
+        color:white;
+        font-size:50px;
+    }
+    
+}
+@media screen and (max-width:400px){
+    .fail{
+        border-style:solid;
+        border-radius: 50%;
+        border-color:white;
+        border-width:2px;
+        padding:10px;
+        margin-right:10px;
+        margin-top:10px;
+        color:greenyellow;
+        font-size:x-large;
+    }
+    #menu-game-screen{
+        width:350px;
+        height:350px;
+        border-radius:50%;
+        border-width:5px;
+        border-color:white;
+        border-style: solid;
+        background-color:rgba(240, 255, 255, 0.356);
+        margin-left:5px;
+        margin-right:5px;
+        margin-top:60px;
+        margin-bottom:5px;
+        text-align:center;
+    }
+    #counter{
+        width:350px;
+        height:50px;
+        border-width:5px;
+        border-color:white;
+        border-style: solid;
+        margin-left:5px;
+        margin-right:5px;
+        margin-top:10px;
+        text-align:center;
+        color:white;
+        font-size:50px;
+    }
+    
 }

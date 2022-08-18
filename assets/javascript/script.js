@@ -4,13 +4,10 @@ let userArray= ['Mark', 'George', 'Ben', 'Chris']
 // styling for the first and last fail blocks as css struggles to target id if its numerical
 let firstFail = document.getElementById('1')
 let fifthFail = document.getElementById('5')
-firstFail.style.marginLeft = '10%'
-fifthFail.style.marginRight = '15%'
+fifthFail.style.marginRight = "0px"
 // responsive styling for different screen sizes
 var mq = window.matchMedia( "(max-width: 450px)" );
 if(mq.matches) {
-    firstFail.style.marginLeft = '10%'
-    fifthFail.style.marginRight = '10vw'
     let scoreboard = document.getElementById('scoreboard');
     scoreboard.remove();
     newScoreboard = document.createElement('div');
@@ -20,11 +17,11 @@ if(mq.matches) {
         <th id="leaderboard-heading">Leaderboard</th>
     </tr>
     <tr>
-        <td class="table-data">Mark:</td>
+        <td class="table-data">Mrk:</td>
         <td class="table-data">32</td>
     </tr>
     <tr>
-        <td class="table-data">George:</td>
+        <td class="table-data">Geo:</td>
         <td class="table-data">28</td>
     </tr>
     <tr>
@@ -32,18 +29,13 @@ if(mq.matches) {
         <td class="table-data">27</td>
     </tr>
     <tr>
-        <td class="table-data">Chris:</td>
+        <td class="table-data">Crs:</td>
         <td class="table-data">24</td>
     </tr>
 </table>`
     let body = document.getElementById('home-page');
     body.appendChild(newScoreboard);
     body.style.width = "95vw"
-}
-var mq = window.matchMedia( "(max-width: 450px)" );
-if(mq.matches) {
-    firstFail.style.marginLeft = '8%'
-    fifthFail.style.marginRight = '5%'
 }
 
 

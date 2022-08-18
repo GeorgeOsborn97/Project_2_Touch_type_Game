@@ -29,9 +29,9 @@ header{
     height:350px;
     border-radius:50%;
     border-width:5px;
-    border-color:white;
+    border-color:purple;
     border-style: solid;
-    background-color:rgba(240, 255, 255, 0.356);
+    background-color:rgba(255, 240, 245, 0.356);
     margin-left:30%;
     margin-right:20%;
     margin-top:60px;
@@ -46,8 +46,16 @@ header{
 #input{
     margin-bottom: 10px;
 }
+#submit{
+    height:75px;
+}
 #username{
     text-transform: uppercase;
+    font-family: inherit;
+    text-align: center;
+}
+#user-label{
+    color:white;
 }
 #scoreboard{
     width:fit-content;
@@ -87,7 +95,7 @@ header{
     margin-left:30%;
     margin-right:20%;
     margin-top:10px;
-    padding-bottom: 10px;
+    padding-bottom: 25px;
     text-align:center;
     color:white;
     font-size:50px;
@@ -113,7 +121,6 @@ header{
         height:350px;
         border-radius:50%;
         border-width:5px;
-        border-color:white;
         border-style: solid;
         background-color:rgba(240, 255, 255, 0.356);
         margin-left:20px;
@@ -131,6 +138,7 @@ header{
         margin-left:20px;
         margin-right:5px;
         margin-top:10px;
+        padding-bottom: 15px;
         text-align:center;
         color:white;
         font-size:50px;
@@ -154,7 +162,6 @@ header{
         height:350px;
         border-radius:50%;
         border-width:5px;
-        border-color:white;
         border-style: solid;
         background-color:rgba(240, 255, 255, 0.356);
         margin-left:5px;

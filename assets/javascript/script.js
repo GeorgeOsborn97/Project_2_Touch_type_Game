@@ -115,6 +115,8 @@ function startTheGame(event) {
             let score = document.getElementById("counter");
             score.innerHTML++
         } else {
+            var audio = new Audio("assets/audio/14477_1460037267.mp3");
+            audio.play();
             failCount += 1
             let failSigns = document.getElementById(failCount)
             failSigns.style.color = "red"

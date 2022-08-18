@@ -202,7 +202,7 @@ function resetMenu(event) {
         <label id="user-label" for="username">Username:</label>
         <input id="username" name="username" type="text" required>
     </div>
-    <input type="submit" aria-label="submit">`
+    <input  id="submit" type="image" name="submit" alt="submit" aria-label="submit" src="assets/images/pixilart-drawing (start).png">`
     let screen = document.getElementById("menu-game-screen");
         screen.style.backgroundImage = null
         screen.appendChild(newMenu);

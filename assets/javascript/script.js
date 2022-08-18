@@ -52,15 +52,18 @@ function usernameEntry(event) {
         title.style.color = "red"
     let instructions = document.createElement("p");
         instructions.setAttribute('id', 'instructions')
-    let play = document.createElement("button");
-        play.style.height = '50px';
-        play.style.width = '100px';
-        play.innerHTML = "PLAY";
-        play.setAttribute('onclick', 'startTheGame();')
+    let play = document.createElement("img");
+        play.style.height = '100px';
+        play.style.width = '150px';
+        play.setAttribute('src','assets/images/pixilart-drawing (play).png');
+        play.setAttribute('type', 'image')
+        play.setAttribute('onclick', 'startTheGame();');
         play.setAttribute('id', 'playButton');
-        title.innerHTML = "Title"
-        instructions.innerHTML = "instructions to be added"
-    let screen = document.getElementById("menu-game-screen");
+        title.innerHTML = "How to play"
+        title.style.color = "white"
+        instructions.innerHTML = "After the countdown a random key will be displayed in the circle, you will have 1 second to hit the same key before it changes. A correct click = 1 point, 5 mis-clicks and the game ends. there is a max score of 40 if you make it to the end. Good Luck!"
+        instructions.style.color = "white"
+        let screen = document.getElementById("menu-game-screen");
         screen.appendChild(title);
         screen.appendChild(instructions);
         screen.appendChild(play);
@@ -196,7 +199,7 @@ function resetMenu(event) {
         newMenu.setAttribute('method', 'post'); 
         newMenu.innerHTML = 
     `<div id="input">
-        <label for="username">Username:</label>
+        <label id="user-label" for="username">Username:</label>
         <input id="username" name="username" type="text" required>
     </div>
     <input type="submit" aria-label="submit">`

@@ -85,7 +85,7 @@ function startTheGame(event) {
     function newKey() {
         timesRun += 1
         console.log(timesRun)
-        if (timesRun === 40){
+        if (timesRun === 41){
             clearInterval(interval);  
             body.removeEventListener('keydown', keyPress); 
             endGame();     
@@ -216,6 +216,7 @@ function resetMenu(event) {
     failReset.namedItem(i).style.borderColor = "white"
     sortTable();
     }
+    //Sort table function tken from w3schools credit to https://www.w3schools.com/howto/howto_js_sort_table.asp
     function sortTable() {
         var table, rows, switching, z, x, y, shouldSwitch;
         table = document.getElementById("leaderboard");

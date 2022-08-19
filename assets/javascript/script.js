@@ -76,14 +76,18 @@ if(mw.matches){
 }
 
 function startTimer(event){
-    let title = document.getElementById('title')
-    title.innerHTML = 3
-    var countDown = setInterval(downTimer, 1000)
+    let title = document.getElementById('title');
+    title.innerHTML = 3;
+    var countDown = setInterval(downTimer, 1000);
     function downTimer(){
-        title.innerHTML -= 1
+        title.innerHTML -= 1;
+        var audio = new Audio("assets/audio/countDown.mp3");
+            audio.play();
         if(title.innerHTML == 0){
-            console.log('game starts')
+            console.log('game starts');
             clearInterval(countDown);
+            var audio = new Audio("assets/audio/start.mp3");
+            audio.play();
             startTheGame();
         }
     }
@@ -150,7 +154,7 @@ function startTheGame(event) {
             let score = document.getElementById("counter");
             score.innerHTML++;
         } else {
-            var audio = new Audio("assets/audio/14477_1460037267.mp3");
+            var audio = new Audio("assets/audio/fail.mp3");
             audio.play();
             failCount += 1;
             let failSigns = document.getElementById(failCount);

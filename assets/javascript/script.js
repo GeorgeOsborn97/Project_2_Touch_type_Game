@@ -8,6 +8,10 @@ fifthFail.style.marginRight = "0px"
 // responsive styling for different screen sizes
 var mq = window.matchMedia( "(max-width: 800px)" );
 if(mq.matches) {
+    function mobileLoad(event){
+        alert('Turn Device Portrait');
+    }
+    document.addEventListener('DOMContentLoaded', mobileLoad)
     let scoreboard = document.getElementById('scoreboard');
     scoreboard.remove();
     let newScoreboard = document.createElement('div');
@@ -36,10 +40,7 @@ if(mq.matches) {
     let body = document.getElementById('home-page');
     body.appendChild(newScoreboard);
     body.style.width = "95vw"
-
 }
-
-
 //First function that executes when a username is submitted. It's Purpose is to Remove the Form element, add an <li> element with the inputted name.
 //And create an instructions page witha play button that will begin the game.
 function usernameEntry(event) {

@@ -63,7 +63,7 @@ if(mw.matches){
         play.style.width = '150px';
         play.setAttribute('src','assets/images/pixilart-drawing-(play).png');
         play.setAttribute('type', 'image');
-        play.setAttribute('onclick', 'startTheGame();');
+        play.setAttribute('onclick', 'startTimer();');
         play.setAttribute('id', 'playButton');
         title.innerHTML = "How to play";
         title.style.color = "white";
@@ -74,6 +74,21 @@ if(mw.matches){
         screen.appendChild(instructions);
         screen.appendChild(play);
 }
+
+function startTimer(event){
+    let title = document.getElementById('title')
+    title.innerHTML = 3
+    var countDown = setInterval(downTimer, 1000)
+    function downTimer(){
+        title.innerHTML -= 1
+        if(title.innerHTML == 0){
+            console.log('game starts')
+            clearInterval(countDown);
+            startTheGame();
+        }
+    }
+}
+
 let form = document.getElementById("name-select");
     form.addEventListener('submit', usernameEntry);
 //the game runnning function that generates a random key, tracks the key pressed and provides on out come eitherway. when 5 mis clicks are counted the game ends, or if the game runs 40 cycles through

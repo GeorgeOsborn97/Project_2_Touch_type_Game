@@ -62,7 +62,7 @@ if(mw.matches){
     let play = document.createElement("img");
         play.style.height = '100px';
         play.style.width = '150px';
-        play.setAttribute('src','assets/images/pixilart-drawing (play).png');
+        play.setAttribute('src','assets/images/pixilart-drawing-(play).png');
         play.setAttribute('type', 'image')
         play.setAttribute('onclick', 'startTheGame();');
         play.setAttribute('id', 'playButton');
@@ -220,7 +220,7 @@ function resetMenu(event) {
         <label id="user-label" for="username">Username:</label>
         <input id="username" name="username" type="text" required>
     </div>
-    <input  id="submit" type="image" name="submit" alt="submit" aria-label="submit" src="assets/images/pixilart-drawing (start).png">`
+    <input  id="submit" type="image" name="submit" alt="submit" aria-label="submit" src="assets/images/pixilart-drawing-(start).png">`
     if(mq.matches){
         let newLogo = document.createElement('header');
         newLogo.innerHTML = `<h1>the touch type game</h1>`;

@@ -43,6 +43,11 @@ if(mq.matches) {
 //First function that executes when a username is submitted. It's Purpose is to Remove the Form element, add an <li> element with the inputted name.
 //And create an instructions page witha play button that will begin the game.
 function usernameEntry(event) {
+    var mw = window.matchMedia( "(max-width: 360px)" );
+if(mw.matches){
+    let counter = document.getElementById('counter')
+    counter.style.marginTop = "120px"
+}
     event.preventDefault();
     let username = document.getElementById("username");
     let user = username.value;
@@ -78,6 +83,11 @@ function startTheGame(event) {
         header.remove();
         let failDiv = document.getElementById('fail-div')
         failDiv.style.paddingTop = '25px'
+    }
+    var mw = window.matchMedia( "(max-width: 360px)" );
+    if(mw.matches){
+        let counter = document.getElementById('counter')
+        counter.style.marginTop = "10px"
     }
     title.style.padding = "80px, 80px, 80px, 80px"
     title.style.fontSize = "120px" 

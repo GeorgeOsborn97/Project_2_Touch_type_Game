@@ -6,11 +6,11 @@ let firstFail = document.getElementById('1')
 let fifthFail = document.getElementById('5')
 fifthFail.style.marginRight = "0px"
 // responsive styling for different screen sizes
-var mq = window.matchMedia( "(max-width: 450px)" );
+var mq = window.matchMedia( "(max-width: 800px)" );
 if(mq.matches) {
     let scoreboard = document.getElementById('scoreboard');
     scoreboard.remove();
-    newScoreboard = document.createElement('div');
+    let newScoreboard = document.createElement('div');
     newScoreboard.innerHTML = 
     `<table id="leaderboard">
     <tr>
@@ -36,6 +36,7 @@ if(mq.matches) {
     let body = document.getElementById('home-page');
     body.appendChild(newScoreboard);
     body.style.width = "95vw"
+
 }
 
 
@@ -72,6 +73,12 @@ let form = document.getElementById("name-select");
     form.addEventListener('submit', usernameEntry);
 //the game runnning function that generates a random key, tracks the key pressed and provides on out come eitherway. when 5 mis clicks are counted the game ends, or if the game runs 40 cycles through
 function startTheGame(event) {
+    if(mq.matches){
+        let header = document.getElementById('logo');
+        header.remove();
+        let failDiv = document.getElementById('fail-div')
+        failDiv.style.paddingTop = '25px'
+    }
     title.style.padding = "80px, 80px, 80px, 80px"
     title.style.fontSize = "120px" 
     title.innerHTML = "GO!"
@@ -203,6 +210,13 @@ function resetMenu(event) {
         <input id="username" name="username" type="text" required>
     </div>
     <input  id="submit" type="image" name="submit" alt="submit" aria-label="submit" src="assets/images/pixilart-drawing (start).png">`
+    if(mq.matches){
+        let newLogo = document.createElement('header');
+        newLogo.innerHTML = `<h1>the touch type game</h1>`;
+        let firstDiv = document.getElementById('fail-div')
+        let body = document.getElementById('home-page')
+        body.insertBefore(newLogo, firstDiv)
+    }
     let screen = document.getElementById("menu-game-screen");
         screen.style.backgroundImage = null
         screen.appendChild(newMenu);

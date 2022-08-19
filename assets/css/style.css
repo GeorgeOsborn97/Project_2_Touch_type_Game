@@ -101,8 +101,32 @@ header{
     font-size:50px;
 }
 
-@media screen and (max-width:1200px){
-
+@media screen and (max-width:850px){
+    #scoreboard{
+        margin-left:2%;
+    }
+}
+@media screen and (max-width:600px){
+    #menu-game-screen{
+        margin-left:80px;
+        margin-right:6px;
+    }
+    #counter{
+        margin-left:80px;
+        margin-right:6px;
+        margin-top:10px;
+    }  
+}
+@media screen and (max-width:500px){
+    #menu-game-screen{
+        margin-left:60px;
+        margin-right:60px;
+    }
+    #counter{
+        margin-left:60px;
+        margin-right:60px;
+        margin-top:10px;
+    }  
 }
 @media screen and (max-width:450px){
     .fail{

@@ -77,8 +77,8 @@ if(mw.matches){
 
 function startTimer(event){
     let title = document.getElementById('title');
-    title.innerHTML = 3;
-    var countDown = setInterval(downTimer, 1000);
+    title.innerHTML = 5;
+    var countDown = setInterval(downTimer, 1500);
     function downTimer(){
         title.innerHTML -= 1;
         var audio = new Audio("assets/audio/countDown.mp3");

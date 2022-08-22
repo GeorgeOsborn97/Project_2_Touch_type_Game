@@ -3,6 +3,7 @@ let keyArray = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm',
 let keyArrayHard = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', '1', '2', '3', '4', '5', '6', '7', '8', '9','!','"','£','$','%','^','*','(',')','<','>',',','.','/','?',';',':','[',']','{','}','#'];
 let userArray= ['Mark', 'George', 'Ben', 'Chris'];
 let dificultyArray = [];
+// this allows the difficulty to be selected
 function dificultySelect(event){
     let dificultyEasy = document.getElementById("easy")
     let dificultyHard = document.getElementById("hard")
@@ -23,6 +24,7 @@ fifthFail.style.marginRight = "0px";
 // responsive styling for different screen sizes
 var mq = window.matchMedia( "(max-width: 800px)" );
 // alert message on mobile to play the game portrait as in landscape the keyboard will obscure the game screen.
+// also this disbales hard mode on mobile as it is not feesable to play with special characters on a mobile device
 if(mq.matches) {
     function mobileLoad(event){
         alert('Turn Device Portrait. Hard mode is disbaled on mobile devices');
@@ -32,7 +34,10 @@ if(mq.matches) {
 //Remakes the scoreboard as a new div so that it appears under the game screen instead of to the left of it.    
     let scoreboard = document.getElementById('scoreboard');
     scoreboard.remove();
-    let newScoreboard = document.createElement('div');
+    let scoreboardHard = document.getElementById('scoreboard-hard');
+    scoreboardHard.remove();
+    //table 1
+    let newScoreboard = document.createElement('span');
     newScoreboard.innerHTML = 
     `<table id="leaderboard">
     <tr>
@@ -55,9 +60,42 @@ if(mq.matches) {
         <td class="table-data">24</td>
     </tr>
 </table>`;
+//table2
+let newScoreboardHard = document.createElement('span');
+newScoreboardHard.innerHTML = 
+`<table id="leaderboard-hard">
+    <tr>
+        <th id="leaderboard-heading-hard">Leaderboard</th>
+    </tr>
+    <tr>
+        <td class="table-data">Mrk:</td>
+        <td class="table-data">32</td>
+    </tr>
+    <tr>
+        <td class="table-data">Geo:</td>
+        <td class="table-data">28</td>
+    </tr>
+    <tr>
+        <td class="table-data">Ben:</td>
+        <td class="table-data">27</td>
+    </tr>
+    <tr>
+        <td class="table-data">Crs:</td>
+        <td class="table-data">24</td>
+    </tr>
+</table>`;
     let body = document.getElementById('home-page');
     body.appendChild(newScoreboard);
-    body.style.width = "95vw";
+    body.appendChild(newScoreboardHard);
+    body.style.width = "100vw";
+    let newLeaderboard = document.getElementById('leaderboard')
+    newLeaderboard.style.width = '40%';
+    newLeaderboard.style.position = 'relative';
+    newLeaderboard.style.float = 'left';
+    let newLeaderboardHard = document.getElementById('leaderboard-hard')
+    newLeaderboardHard.style.width = '40%';
+    newLeaderboardHard.style.position = 'relative';
+    newLeaderboardHard.style.float = 'right';
 }
 //First function that executes when a username is submitted. It's Purpose is to Remove the Form element, push the inputted name to the array.
 //And create an instructions page with a play button that will begin the game.

@@ -43,6 +43,7 @@ if(mq.matches) {
 //First function that executes when a username is submitted. It's Purpose is to Remove the Form element, add an <li> element with the inputted name.
 //And create an instructions page witha play button that will begin the game.
 function usernameEntry(event) {
+    let form = document.getElementById("name-select");
     var mw = window.matchMedia( "(max-width: 360px)" );
 if(mw.matches){
     let counter = document.getElementById('counter');
@@ -187,8 +188,8 @@ function endGame() {
     let leaderboard = document.getElementById("leaderboard");
     let newRow = document.createElement("tr");
         leaderboard.appendChild(newRow);
-        newRow.setAttribute('id', 'userInput');
-    const gameData = document.querySelector('#userInput');
+        newRow.setAttribute('id', 'userInput' + x);
+    const gameData = document.querySelector('#userInput' + x);
         let newName = document.createElement("td");
         newName.innerHTML = userArray[x] + ':';
         gameData.appendChild(newName);
@@ -235,7 +236,7 @@ function resetMenu(event) {
         newMenu.innerHTML = 
     `<div id="input">
         <label id="user-label" for="username">Username:</label>
-        <input id="username" name="username" type="text" required>
+        <input id="username" name="username" type="text" maxlength="3" required>
     </div>
     <input  id="submit" type="image" name="submit" alt="submit" aria-label="submit" src="assets/images/pixilart-drawing-(start).png">`;
     if(mq.matches){
@@ -255,6 +256,8 @@ function resetMenu(event) {
     failReset.namedItem(i).style.borderColor = "white";
     sortTable();
     }
+    let newCounter = document.getElementById('counter');
+    newCounter.innerHTML = 0;
     //Sort table function tken from w3schools credit to https://www.w3schools.com/howto/howto_js_sort_table.asp
     function sortTable() {
         var table, rows, switching, z, x, y, shouldSwitch;
@@ -290,4 +293,6 @@ function resetMenu(event) {
           }
         }
       }
+      let form = document.getElementById("name-select");
+    form.addEventListener('submit', usernameEntry);
 }

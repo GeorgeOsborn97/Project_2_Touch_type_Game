@@ -1,18 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300;400&family=Lato:wght@300&family=Oswald&family=Silkscreen&display=swap');
+/* simple styling for the background of the body and the font used throughout.*/
 body{
     background-image:url("../images/stars.jpg");
     width:100vw;
     font-family: 'Silkscreen', cursive;
 }
+/*header styling to set it in the middle of the screen*/
 header{
     text-align:center;
     margin-top:10px;
     padding-bottom:60px;
     color:white;
 }
+/*set the fail icons into the middle of the screen*/
 #fail-div{
     text-align:center;
 }
+/*style the icons*/
 .fail{
     border-style:solid;
     border-radius: 50%;
@@ -24,6 +28,7 @@ header{
     color:greenyellow;
     font-size:x-large;
 }
+/*styling for the main game screen, these change as the user progresses*/
 #menu-game-screen{
     width:350px;
     height:350px;
@@ -38,6 +43,7 @@ header{
     margin-bottom:5px;
     text-align:center;
 }
+/*style for the form*/
 #name-select{
     padding-top:50%;
     color:black;
@@ -49,6 +55,7 @@ header{
 #submit{
     height:75px;
 }
+/*Endure the text inputted follows the style of the site*/
 #username{
     text-transform: uppercase;
     font-family: inherit;
@@ -57,6 +64,7 @@ header{
 #user-label{
     color:white;
 }
+/*Style ofr the scoreboard table, this changes depending on the device*/
 #scoreboard{
     width:fit-content;
     height:350px;
@@ -86,6 +94,7 @@ header{
 .table-data{
     text-transform: uppercase;
 }
+/*style for the counter*/
 #counter{
     width:350px;
     height:40px;
@@ -100,7 +109,7 @@ header{
     color:white;
     font-size:50px;
 }
-
+/*responsove styling for diffrenet screen sizes.*/
 @media screen and (max-width:850px){
     #scoreboard{
         margin-left:2%;
@@ -130,42 +139,19 @@ header{
 }
 @media screen and (max-width:450px){
     .fail{
-        border-style:solid;
-        border-radius: 50%;
-        border-color:white;
-        border-width:2px;
-        padding:10px;
         margin-right:10px;
-        margin-top:10px;
-        color:greenyellow;
-        font-size:x-large;
     }
     #menu-game-screen{
-        width:350px;
-        height:350px;
-        border-radius:50%;
-        border-width:5px;
-        border-style: solid;
-        background-color:rgba(240, 255, 255, 0.356);
         margin-left:20px;
         margin-right:5px;
-        margin-top:60px;
-        margin-bottom:5px;
-        text-align:center;
     }
     #counter{
         width:350px;
         height:50px;
-        border-width:5px;
-        border-color:white;
-        border-style: solid;
         margin-left:20px;
         margin-right:5px;
         margin-top:10px;
         padding-bottom: 15px;
-        text-align:center;
-        color:white;
-        font-size:50px;
     }
     
 }
@@ -173,27 +159,15 @@ header{
     #menu-game-screen{
         width:340px;
         height:340px;
-        border-radius:50%;
-        border-width:5px;
-        border-style: solid;
-        background-color:rgba(240, 255, 255, 0.356);
         margin-left:10px;
         margin-right:1px;
-        margin-top:60px;
-        margin-bottom:5px;
-        text-align:center;
     }
     #counter{
         width:340px;
         height:50px;
-        border-width:5px;
-        border-color:white;
-        border-style: solid;
         margin-left:10px;
         margin-right:5px;
         margin-top:10px;
-        text-align:center;
-        color:white;
         font-size:50px;
     }
     
@@ -202,111 +176,59 @@ header{
     #menu-game-screen{
         width:330px;
         height:330px;
-        border-radius:50%;
-        border-width:5px;
-        border-style: solid;
-        background-color:rgba(240, 255, 255, 0.356);
         margin-left:5px;
         margin-right:5px;
-        margin-top:60px;
-        margin-bottom:5px;
-        text-align:center;
     }
     #counter{
         width:330px;
         height:50px;
-        border-width:5px;
-        border-color:white;
-        border-style: solid;
         margin-left:5px;
         margin-right:5px;
         margin-top:10px;
         padding-bottom: 15px;
-        text-align:center;
-        color:white;
-        font-size:50px;
     }
     
 }
 @media screen and (max-width:350px){
     .fail{
-        border-style:solid;
-        border-radius: 50%;
-        border-color:white;
-        border-width:2px;
-        padding:10px;
         margin-right:3px;
         margin-top:3px;
-        color:greenyellow;
-        font-size:x-large;
     }
     #menu-game-screen{
         width:280px;
         height:280px;
-        border-radius:50%;
-        border-width:5px;
-        border-style: solid;
-        background-color:rgba(240, 255, 255, 0.356);
         margin-left:5px;
         margin-right:5px;
-        margin-top:60px;
-        margin-bottom:5px;
-        text-align:center;
     }
     #counter{
         width:280px;
         height:50px;
-        border-width:5px;
-        border-color:white;
-        border-style: solid;
         margin-left:5px;
         margin-right:5px;
         margin-top:10px;
         padding-bottom: 15px;
-        text-align:center;
-        color:white;
-        font-size:50px;
-    }
+       }
     
 }
 @media screen and (max-width:300px){
     .fail{
-        border-style:solid;
-        border-radius: 50%;
-        border-color:white;
-        border-width:2px;
         padding:8px;
         margin-right:3px;
         margin-top:3px;
-        color:greenyellow;
-        font-size:x-large;
     }
     #menu-game-screen{
         width:270px;
         height:270px;
-        border-radius:50%;
-        border-width:5px;
-        border-style: solid;
-        background-color:rgba(240, 255, 255, 0.356);
         margin-left:0px;
         margin-right:0px;
-        margin-top:60px;
-        margin-bottom:5px;
-        text-align:center;
     }
     #counter{
         width:270px;
         height:50px;
-        border-width:5px;
-        border-color:white;
-        border-style: solid;
         margin-left:0px;
         margin-right:0px;
         margin-top:10px;
         padding-bottom: 15px;
-        text-align:center;
-        color:white;
-        font-size:50px;
     }
     
 }

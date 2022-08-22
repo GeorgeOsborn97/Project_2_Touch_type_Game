@@ -45,7 +45,7 @@ header{
 }
 /*style for the form*/
 #name-select{
-    padding-top:50%;
+    padding-top:40%;
     color:black;
     display:inline-block;
 }
@@ -63,6 +63,11 @@ header{
 }
 #user-label{
     color:white;
+}
+#dificulty{
+    color:white;
+    font-size:large;
+    margin-bottom:20px;
 }
 /*Style ofr the scoreboard table, this changes depending on the device*/
 #scoreboard{

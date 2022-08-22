@@ -1,16 +1,18 @@
 // Define the arrays that will be required
 let keyArray = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
 let userArray= ['Mark', 'George', 'Ben', 'Chris'];
-// styling for the first and last fail blocks as css struggles to target id if its numerical
+// styling for the first fail blocks as css can not to target id if its numerical
 let fifthFail = document.getElementById('5');
 fifthFail.style.marginRight = "0px";
 // responsive styling for different screen sizes
 var mq = window.matchMedia( "(max-width: 800px)" );
+// alert message on mobile to play the game portrait as in landscape the keyboard will obscure the game screen.
 if(mq.matches) {
     function mobileLoad(event){
         alert('Turn Device Portrait');
     }
     document.addEventListener('DOMContentLoaded', mobileLoad);
+//Remakes the scoreboard as a new div so that it appears under the game screen instead of to the left of it.    
     let scoreboard = document.getElementById('scoreboard');
     scoreboard.remove();
     let newScoreboard = document.createElement('div');
@@ -40,20 +42,23 @@ if(mq.matches) {
     body.appendChild(newScoreboard);
     body.style.width = "95vw";
 }
-//First function that executes when a username is submitted. It's Purpose is to Remove the Form element, add an <li> element with the inputted name.
-//And create an instructions page witha play button that will begin the game.
+//First function that executes when a username is submitted. It's Purpose is to Remove the Form element, push the inputted name to the array.
+//And create an instructions page with a play button that will begin the game.
 function usernameEntry(event) {
     let form = document.getElementById("name-select");
+//This pushes the counter down so that it is not in contanct with the instructions on mobile devices    
     var mw = window.matchMedia( "(max-width: 360px)" );
 if(mw.matches){
     let counter = document.getElementById('counter');
     counter.style.marginTop = "120px";
 }
     event.preventDefault();
+// push the inputted name, remove the form.    
     let username = document.getElementById("username");
     let user = username.value;
         userArray.push(user);
         form.remove();
+// create new h1, p and img elements. the img acts as a button that moves the player on to the game.        
     let title = document.createElement("h1");
         title.setAttribute('id', 'title');
         title.style.color = "red";
@@ -68,14 +73,15 @@ if(mw.matches){
         play.setAttribute('id', 'playButton');
         title.innerHTML = "How to play";
         title.style.color = "white";
-        instructions.innerHTML = "After the countdown a random key will be displayed in the circle, you will have 1 second to hit the same key before it changes. A correct click = 1 point, 5 mis-clicks and the game ends. there is a max score of 40 if you make it to the end. Good Luck!";
+        instructions.innerHTML = "After the countdown a random key will be displayed in the circle, you will have 1 second to hit the same key before it changes. A correct click = 1 point, 5 mis-clicks and the game ends. there is a max score of 40 if you make it to the end. Click the Game over screen at the end to play again. Good Luck!";
         instructions.style.color = "white";
         let screen = document.getElementById("menu-game-screen");
         screen.appendChild(title);
         screen.appendChild(instructions);
         screen.appendChild(play);
 }
-
+// a function that is called when the player starts the game.
+// it simply turns the title within the gamescreen into a 5 second countdown. at 0 the game function is called.
 function startTimer(event){
     let title = document.getElementById('title');
     title.innerHTML = 5;
@@ -96,8 +102,9 @@ function startTimer(event){
 
 let form = document.getElementById("name-select");
     form.addEventListener('submit', usernameEntry);
-//the game runnning function that generates a random key, tracks the key pressed and provides on out come eitherway. when 5 mis clicks are counted the game ends, or if the game runs 40 cycles through
+// the game runnning function that generates a random key, tracks the key pressed and provides on out come eitherway. when 5 mis clicks are counted the game ends, or if the game runs 40 cycles through
 function startTheGame(event) {
+// if the game is played on mobile the title is removed so that tyhe game screen can be clearly seen when a mobile keyboard is displayed.    
     if(mq.matches){
         let header = document.getElementById('logo');
         header.remove();
@@ -105,15 +112,17 @@ function startTheGame(event) {
         failDiv.style.paddingTop = '25px';
     }
     var mw = window.matchMedia( "(max-width: 360px)" );
+// this moves the counter back up after it was moved down in order to not obscure the intructions.    
     if(mw.matches){
         let counter = document.getElementById('counter');
         counter.style.marginTop = "10px";
     }
+// re size and move the title as this now shows the randomly generated key.    
     title.style.padding = "80px, 80px, 80px, 80px";
     title.style.fontSize = "120px";
     title.innerHTML = "GO!";
-    //This function produces the random key and chnages the color every new key in order to keep a change if the random key is the same as the last
-    // it also keeps a track of the amount of keys shown when the count hits 40 the game ends.
+//This function produces the random key and chnages the color every new key in order to keep a change if the random key is the same as the last
+// it also keeps a track of the amount of keys shown when the count hits 40 the game ends.
     function newKey() {
         timesRun += 1;
         console.log(timesRun);
@@ -140,6 +149,7 @@ function startTheGame(event) {
             }
         }
     }
+// these are the variables that are created to keep the game running, including tyhe run count, interval time and fail count    
     var timesRun = 0;
     var roundCount = 0;
     var sec = 1000;
@@ -175,11 +185,12 @@ body.addEventListener('keydown', keyPress);
 }
 // end game function is called when the count = 40, logs the users name and score. needs a sort function  
 function endGame() {
-   
+// first the game over screen is shown   
     let newScreen = document.getElementById('menu-game-screen');
     newScreen.style.backgroundImage = "url('assets/images/gameOver.jpg')";
     title.remove();
     console.log("end reached");
+// the users name is then pulled from the array, the score is added and then put to the table.
     let score = document.getElementById("counter");
     var finalScore = score.innerHTML;
         console.log(userArray);
@@ -206,7 +217,7 @@ function endGame() {
     let returnToMenu = document.getElementById("menu-game-screen");
     returnToMenu.addEventListener('onclick', resetMenu);
 }
-
+// simple hover effects made to give clear indication of user interactivity
 function hover(event) {
     if(returnToMenu.style.backgroundImage != null){
         let returnToMenuDiv = document.getElementById("menu-game-screen");
@@ -222,7 +233,7 @@ function hoverDown(event) {
 let returnToMenu = document.getElementById("menu-game-screen");
     returnToMenu.addEventListener('onmouseenter', hover);
     returnToMenu.addEventListener('onmouseleave', hoverDown);
-
+// the reset menu recreates the initial conditions of the site, so that a new name can be inputted and the game can be replayed.
 function resetMenu(event) {
     let returnToMenu = document.getElementById("menu-game-screen");
     returnToMenu.removeAttribute('onclick', 'resetMenu();');
@@ -239,6 +250,7 @@ function resetMenu(event) {
         <input id="username" name="username" type="text" maxlength="3" required>
     </div>
     <input  id="submit" type="image" name="submit" alt="submit" aria-label="submit" src="assets/images/pixilart-drawing-(start).png">`;
+// if on mobile it is here where the title/logo is recreated.    
     if(mq.matches){
         let newLogo = document.createElement('header');
         newLogo.innerHTML = `<h1>the touch type game</h1>`;
@@ -249,7 +261,8 @@ function resetMenu(event) {
     let screen = document.getElementById("menu-game-screen");
         screen.style.backgroundImage = null;
         screen.appendChild(newMenu);
-    for (let i = 1; i < 6; i++){
+// the fail icons are reset to green.   
+        for (let i = 1; i < 6; i++){
         console.log(i);
     let failReset = document.getElementsByClassName('fail');
     failReset.namedItem(i).style.color = "greenyellow";

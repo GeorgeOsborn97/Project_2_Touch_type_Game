@@ -28,6 +28,10 @@ header{
     color:greenyellow;
     font-size:x-large;
 }
+#mainSection{
+    height:350px;
+    width:100vw;
+}
 /*styling for the main game screen, these change as the user progresses*/
 #menu-game-screen{
     width:350px;
@@ -37,11 +41,11 @@ header{
     border-color:purple;
     border-style: solid;
     background-color:rgba(255, 240, 245, 0.356);
-    margin-left:35%;
-    margin-right:20%;
+    margin:0 auto;
     margin-top:60px;
     margin-bottom:5px;
     text-align:center;
+    position:relative;    
 }
 /*style for the form*/
 #name-select{
@@ -83,10 +87,11 @@ header{
     padding-right:5px;
     text-align:left;
     float:left;
+    position: relative;
 }
 #leaderboard{
     color:white;
-    width:100%;
+    width:50%;
 }
 #leaderboard-heading{
     width:140px;
@@ -99,6 +104,33 @@ header{
 .table-data{
     text-transform: uppercase;
 }
+#scoreboard-hard{
+    width:fit-content;
+    height:350px;
+    border-width:3px;
+    border-color:white;
+    border-style: solid;
+    border-radius: 10px;
+    margin-left:0%;
+    margin-right:5%;
+    margin-top:100px;
+    padding-right:5px;
+    text-align:left;
+    float:right;
+    position: relative;
+}
+#leaderboard-hard{
+    color:white;
+    width:50%;
+}
+#leaderboard-heading-hard{
+    width:140px;
+    padding-right:0px;
+    padding-left:15px;
+    text-align:center;
+    font-size:larger;
+    text-decoration-line:underline;
+}
 /*style for the counter*/
 #counter{
     width:350px;
@@ -106,8 +138,7 @@ header{
     border-width:5px;
     border-color:white;
     border-style: solid;
-    margin-left:35%;
-    margin-right:20%;
+    margin:0 auto;
     margin-top:30px;
     padding-bottom: 25px;
     text-align:center;
@@ -117,7 +148,10 @@ header{
 /*responsove styling for diffrenet screen sizes.*/
 @media screen and (max-width:850px){
     #scoreboard{
-        margin-left:2%;
+        margin-left:5px;
+    }
+    #scoreboard-hard{
+        margin-right:5px;
     }
 }
 @media screen and (max-width:600px){
@@ -130,6 +164,12 @@ header{
         margin-right:6px;
         margin-top:30px;
     }  
+    #leaderboard-heading{
+        padding:0;
+    }
+    #leaderboard-heading-hard{
+        padding:0;
+    }
 }
 @media screen and (max-width:500px){
     #menu-game-screen{

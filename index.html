@@ -50,6 +50,12 @@
     <!--This is the heart of the site, initially containing the form for a username, the div then holds the instructions as well as where the game is played when the game starts-->
     <div id="menu-game-screen">
         <form id="name-select" action="https://formdump.codeinstitute.net/" method="post">
+            <div id="dificulty">
+                <label for="easy">Easy:</label>
+                <input name="dificulty" id="easy" type="radio" value="easy">
+                <label for="hard">Hard:</label>
+                <input name="dificulty" id="hard" type="radio" value="hard">
+            </div>
             <div id="input">
                 <label id="user-label" for="username">Username:</label>
                 <input id="username" name="username" type="text" maxlength="3" required>

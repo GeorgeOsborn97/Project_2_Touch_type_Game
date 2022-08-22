@@ -1,6 +1,22 @@
 // Define the arrays that will be required
 let keyArray = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
+let keyArrayHard = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', '1', '2', '3', '4', '5', '6', '7', '8', '9','!','"','£','$','%','^','*','(',')','<','>',',','.','/','?',';',':','[',']','{','}','#'];
 let userArray= ['Mark', 'George', 'Ben', 'Chris'];
+let dificultyArray = [];
+function dificultySelect(event){
+    let dificultyEasy = document.getElementById("easy")
+    let dificultyHard = document.getElementById("hard")
+    if (dificultyEasy.checked){
+        dificultyArray.push('easy')
+    }
+    if (dificultyHard.checked){
+        dificultyArray.push('hard')
+    }
+    console.log(dificultyArray)
+}
+let radioSelect = document.getElementById("dificulty");
+    radioSelect.addEventListener('click', dificultySelect);
+
 // styling for the first fail blocks as css can not to target id if its numerical
 let fifthFail = document.getElementById('5');
 fifthFail.style.marginRight = "0px";
@@ -121,6 +137,8 @@ function startTheGame(event) {
     title.style.padding = "80px, 80px, 80px, 80px";
     title.style.fontSize = "120px";
     title.innerHTML = "GO!";
+    let x = dificultyArray.push() - 1;
+        console.log(dificultyArray[x])
 //This function produces the random key and chnages the color every new key in order to keep a change if the random key is the same as the last
 // it also keeps a track of the amount of keys shown when the count hits 40 the game ends.
     function newKey() {
@@ -132,16 +150,25 @@ function startTheGame(event) {
             endGame();     
         }
         //this is not functioning at the moment, look in the future at increasing speed every 10 rounds
-        roundCount += 1;
-        if (roundCount === 10){
-            sec = sec * 0.9;
-            roundCount = 0;
-        }
+        
        //This condition produces the random key and chnages the color every new key in order to keep a change if the random key is the same as the last
        if (timesRun != 40){
-            let i = Math.floor(Math.random() * (33-0+1));
+        console.log("first if works")
+            if(dificultyArray[x] == 'easy'){
+                let i = Math.floor(Math.random() * (33-0+1));
+                console.log(i);
+                title.innerHTML = keyArray[i];
+                if(title.style.color == "red"){
+                    title.style.color = "blue";
+                } else {
+                    title.style.color = "red";
+                }
+            }
+        }
+        if(dificultyArray[x] == 'hard'){
+            let i = Math.floor(Math.random() * (55-0+1));
             console.log(i);
-            title.innerHTML = keyArray[i];
+            title.innerHTML = keyArrayHard[i];
             if(title.style.color == "red"){
                 title.style.color = "blue";
             } else {
@@ -164,7 +191,7 @@ function startTheGame(event) {
             console.log(event.key);
             let score = document.getElementById("counter");
             score.innerHTML++;
-        } else {
+        } else { if(event.shiftKey){return false}
             var audio = new Audio("assets/audio/fail.mp3");
             audio.play();
             failCount += 1;
@@ -245,7 +272,13 @@ function resetMenu(event) {
         newMenu.setAttribute('action', 'https://formdump.codeinstitute.net/');
         newMenu.setAttribute('method', 'post'); 
         newMenu.innerHTML = 
-    `<div id="input">
+    `<div id="dificulty">
+        <label for="easy">Easy:</label>
+        <input name="dificulty" id="easy" type="radio" value="easy">
+        <label for="hard">Hard:</label>
+        <input name="dificulty" id="hard" type="radio" value="hard">
+    </div>
+    <div id="input">
         <label id="user-label" for="username">Username:</label>
         <input id="username" name="username" type="text" maxlength="3" required>
     </div>
@@ -254,6 +287,7 @@ function resetMenu(event) {
     if(mq.matches){
         let newLogo = document.createElement('header');
         newLogo.innerHTML = `<h1>the touch type game</h1>`;
+        newLogo.setAttribute('id', 'logo')
         let firstDiv = document.getElementById('fail-div');
         let body = document.getElementById('home-page');
         body.insertBefore(newLogo, firstDiv);
@@ -308,4 +342,7 @@ function resetMenu(event) {
       }
       let form = document.getElementById("name-select");
     form.addEventListener('submit', usernameEntry);
+    let radioSelect = document.getElementById("dificulty");
+    radioSelect.addEventListener('click', dificultySelect);
+
 }

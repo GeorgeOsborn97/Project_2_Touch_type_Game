@@ -23,7 +23,8 @@
         <span id="5" class="fail"><i class="fa-brands fa-space-awesome"></i></span>
     </div>
     <!--The table is prepopulated with results, however any user scores are inputted and sorted into the table on game over-->
-    <aside id="scoreboard">
+    <section id="mainSection">     
+    <div id="scoreboard">
         <table id="leaderboard">
             <tr>
                 <th id="leaderboard-heading">Leaderboard</th>
@@ -46,8 +47,32 @@
                 <td class="table-data">24</td>
             </tr>
         </table>
-    </aside>
-    <!--This is the heart of the site, initially containing the form for a username, the div then holds the instructions as well as where the game is played when the game starts-->
+    </div>
+    <div id="scoreboard-hard">
+        <table id="leaderboard-hard">
+            <tr>
+                <th id="leaderboard-heading-hard">Leaderboard</th>
+                <th></th>
+            </tr>
+            <tr class="table-data-row">
+                <td class="table-data">MRK:</td>
+                <td class="table-data">32</td>
+            </tr>
+            <tr class="table-data-row">
+                <td class="table-data">GEO:</td>
+                <td class="table-data">28</td>
+            </tr>
+            <tr class="table-data-row">
+                <td class="table-data">BEN:</td>
+                <td class="table-data">27</td>
+            </tr>
+            <tr class="table-data-row">
+                <td class="table-data">CRS:</td>
+                <td class="table-data">24</td>
+            </tr>
+        </table>
+    </div>
+    <!--This is the heart of the site, initially containing the form for a username, the div then holds the instructions as well as where the game is played when the game starts-->  
     <div id="menu-game-screen">
         <form id="name-select" action="https://formdump.codeinstitute.net/" method="post">
             <div id="dificulty">
@@ -63,6 +88,7 @@
             <input id="submit" type="image" name="submit" alt="submit" aria-label="submit" src="assets/images/pixilart-drawing-(start).png">
         </form>
     </div>
+</section>    
     <!--this div contains a the user score. +1 for every matched key.-->
     <div id="counter">0</div>
     <script src="assets/javascript/script.js"></script>

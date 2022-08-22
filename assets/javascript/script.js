@@ -25,7 +25,8 @@ var mq = window.matchMedia( "(max-width: 800px)" );
 // alert message on mobile to play the game portrait as in landscape the keyboard will obscure the game screen.
 if(mq.matches) {
     function mobileLoad(event){
-        alert('Turn Device Portrait');
+        alert('Turn Device Portrait. Hard mode is disbaled on mobile devices');
+        document.getElementById('hard').disabled = true
     }
     document.addEventListener('DOMContentLoaded', mobileLoad);
 //Remakes the scoreboard as a new div so that it appears under the game screen instead of to the left of it.    

@@ -1,6 +1,6 @@
 // Define the arrays that will be required
 let keyArray = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
-let keyArrayHard = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', '1', '2', '3', '4', '5', '6', '7', '8', '9','!','"','£','$','%','^','*','(',')','<','>',',','.','/','?',';',':','[',']','{','}','#'];
+let keyArrayHard = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', '1', '2', '3', '4', '5', '6', '7', '8', '9','!','"','£','$','^','*','(',')',',','.','/','?',';',':','[',']','#'];
 let userArray= ['Mark', 'George', 'Ben', 'Chris'];
 let dificultyArray = ['easy'];
 // this allows the difficulty to be selected
@@ -204,7 +204,7 @@ function startTheGame(event) {
             }
         }
         if(dificultyArray[x] == 'hard'){
-            let i = Math.floor(Math.random() * (55-0+1));
+            let i = Math.floor(Math.random() * (50-0+1));
             console.log(i);
             title.innerHTML = keyArrayHard[i];
             if(title.style.color == "red"){

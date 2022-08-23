@@ -2,7 +2,7 @@
 let keyArray = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
 let keyArrayHard = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', '1', '2', '3', '4', '5', '6', '7', '8', '9','!','"','£','$','%','^','*','(',')','<','>',',','.','/','?',';',':','[',']','{','}','#'];
 let userArray= ['Mark', 'George', 'Ben', 'Chris'];
-let dificultyArray = [];
+let dificultyArray = ['easy'];
 // this allows the difficulty to be selected
 function dificultySelect(event){
     let dificultyEasy = document.getElementById("easy")
@@ -67,23 +67,23 @@ let newScoreboardHard = document.createElement('span');
 newScoreboardHard.innerHTML = 
 `<table id="leaderboard-hard">
     <tr>
-        <th id="leaderboard-heading-hard">Leaderboard</th>
+        <th id="leaderboard-heading-hard">Leaderboard (H)</th>
     </tr>
     <tr>
         <td class="table-data">Mrk:</td>
-        <td class="table-data">32</td>
+        <td class="table-data">18</td>
     </tr>
     <tr>
         <td class="table-data">Geo:</td>
-        <td class="table-data">28</td>
+        <td class="table-data">15</td>
     </tr>
     <tr>
         <td class="table-data">Ben:</td>
-        <td class="table-data">27</td>
+        <td class="table-data">12</td>
     </tr>
     <tr>
         <td class="table-data">Crs:</td>
-        <td class="table-data">24</td>
+        <td class="table-data">8</td>
     </tr>
 </table>`;
     let body = document.getElementById('home-page');
@@ -258,6 +258,7 @@ function endGame() {
     newScreen.style.backgroundImage = "url('assets/images/gameOver.jpg')";
     title.remove();
     console.log("end reached");
+    let dArray = dificultyArray.push() - 1;
 // the users name is then pulled from the array, the score is added and then put to the table.
     let score = document.getElementById("counter");
     var finalScore = score.innerHTML;
@@ -265,9 +266,16 @@ function endGame() {
     let x = userArray.push() - 1;
         console.log(userArray[x] + ': ' + finalScore);
     let leaderboard = document.getElementById("leaderboard");
+    let leaderboardHard = document.getElementById("leaderboard-hard")
     let newRow = document.createElement("tr");
+    if (dificultyArray[dArray] == 'easy'){
         leaderboard.appendChild(newRow);
         newRow.setAttribute('id', 'userInput' + x);
+    }
+    if (dificultyArray[dArray] == 'hard'){
+        leaderboardHard.appendChild(newRow);
+        newRow.setAttribute('id', 'userInput' + x);
+    }
     const gameData = document.querySelector('#userInput' + x);
         let newName = document.createElement("td");
         newName.innerHTML = userArray[x] + ':';

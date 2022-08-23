@@ -32,6 +32,8 @@ if(mq.matches) {
     }
     document.addEventListener('DOMContentLoaded', mobileLoad);
 //Remakes the scoreboard as a new div so that it appears under the game screen instead of to the left of it.    
+    let mainCounter = document.getElementById('counter')
+    mainCounter.style.marginTop = '30px'
     let scoreboard = document.getElementById('scoreboard');
     scoreboard.remove();
     let scoreboardHard = document.getElementById('scoreboard-hard');

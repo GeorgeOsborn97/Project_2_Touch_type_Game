@@ -226,6 +226,8 @@ function startTheGame(event) {
 //the function that tracks and generates keys, also tracking and counting fails
     function keyPress(event) {
         if (event.key == title.innerHTML) {
+            var audio = new Audio("assets/audio/correct.mp3");
+            audio.play();
             console.log(event.key);
             let score = document.getElementById("counter");
             score.innerHTML++;

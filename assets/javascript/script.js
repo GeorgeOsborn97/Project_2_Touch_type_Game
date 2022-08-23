@@ -3,24 +3,26 @@ let keyArray = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm',
 let keyArrayHard = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', '1', '2', '3', '4', '5', '6', '7', '8', '9','!','"','£','$','^','*','(',')',',','.','/','?',';',':','[',']','#'];
 let userArray= ['Mark', 'George', 'Ben', 'Chris'];
 let dificultyArray = ['easy'];
+
 // this allows the difficulty to be selected
 function dificultySelect(event){
-    let dificultyEasy = document.getElementById("easy")
-    let dificultyHard = document.getElementById("hard")
+    let dificultyEasy = document.getElementById("easy");
+    let dificultyHard = document.getElementById("hard");
     if (dificultyEasy.checked){
-        dificultyArray.push('easy')
+        dificultyArray.push('easy');
     }
     if (dificultyHard.checked){
-        dificultyArray.push('hard')
+        dificultyArray.push('hard');
     }
-    console.log(dificultyArray)
+    console.log(dificultyArray);
 }
 let radioSelect = document.getElementById("dificulty");
     radioSelect.addEventListener('click', dificultySelect);
 
 // styling for the first fail blocks as css can not to target id if its numerical
 let fifthFail = document.getElementById('5');
-fifthFail.style.marginRight = "0px";
+    fifthFail.style.marginRight = "0px";
+
 // responsive styling for different screen sizes
 var mq = window.matchMedia( "(max-width: 800px)" );
 // alert message on mobile to play the game portrait as in landscape the keyboard will obscure the game screen.
@@ -28,87 +30,90 @@ var mq = window.matchMedia( "(max-width: 800px)" );
 if(mq.matches) {
     function mobileLoad(event){
         alert('Turn Device Portrait. Hard mode is disbaled on mobile devices');
-        document.getElementById('hard').disabled = true
+        document.getElementById('hard').disabled = true;
     }
     document.addEventListener('DOMContentLoaded', mobileLoad);
+
 //Remakes the scoreboard as a new div so that it appears under the game screen instead of to the left of it.    
-    let mainCounter = document.getElementById('counter')
-    mainCounter.style.marginTop = '30px'
+    let mainCounter = document.getElementById('counter');
+        mainCounter.style.marginTop = '30px';
     let scoreboard = document.getElementById('scoreboard');
-    scoreboard.remove();
+        scoreboard.remove();
     let scoreboardHard = document.getElementById('scoreboard-hard');
-    scoreboardHard.remove();
+        scoreboardHard.remove();
     //table 1
     let newScoreboard = document.createElement('span');
-    newScoreboard.innerHTML = 
-    `<table id="leaderboard">
-    <tr>
-        <th id="leaderboard-heading">Leaderboard</th>
-    </tr>
-    <tr>
-        <td class="table-data">Mrk:</td>
-        <td class="table-data">32</td>
-    </tr>
-    <tr>
-        <td class="table-data">Geo:</td>
-        <td class="table-data">28</td>
-    </tr>
-    <tr>
-        <td class="table-data">Ben:</td>
-        <td class="table-data">27</td>
-    </tr>
-    <tr>
-        <td class="table-data">Crs:</td>
-        <td class="table-data">24</td>
-    </tr>
-</table>`;
+        newScoreboard.innerHTML = 
+            `<table id="leaderboard">
+                <tr>
+                    <th id="leaderboard-heading">Leaderboard</th>
+                </tr>
+                <tr>
+                    <td class="table-data">Mrk:</td>
+                    <td class="table-data">32</td>
+                </tr>
+                <tr>
+                    <td class="table-data">Geo:</td>
+                    <td class="table-data">28</td>
+                </tr>
+                <tr>
+                    <td class="table-data">Ben:</td>
+                    <td class="table-data">27</td>
+                </tr>
+                <tr>
+                    <td class="table-data">Crs:</td>
+                    <td class="table-data">24</td>
+                </tr>
+            </table>`;
 //table2
-let newScoreboardHard = document.createElement('span');
-newScoreboardHard.innerHTML = 
-`<table id="leaderboard-hard">
-    <tr>
-        <th id="leaderboard-heading-hard">Leaderboard (H)</th>
-    </tr>
-    <tr>
-        <td class="table-data">Mrk:</td>
-        <td class="table-data">18</td>
-    </tr>
-    <tr>
-        <td class="table-data">Geo:</td>
-        <td class="table-data">15</td>
-    </tr>
-    <tr>
-        <td class="table-data">Ben:</td>
-        <td class="table-data">12</td>
-    </tr>
-    <tr>
-        <td class="table-data">Crs:</td>
-        <td class="table-data">8</td>
-    </tr>
-</table>`;
+    let newScoreboardHard = document.createElement('span');
+        newScoreboardHard.innerHTML = 
+            `<table id="leaderboard-hard">
+                <tr>
+                    <th id="leaderboard-heading-hard">Leaderboard (H)</th>
+                </tr>
+                <tr>
+                    <td class="table-data">Mrk:</td>
+                    <td class="table-data">18</td>
+                </tr>
+                <tr>
+                    <td class="table-data">Geo:</td>
+                    <td class="table-data">15</td>
+                </tr>
+                <tr>
+                    <td class="table-data">Ben:</td>
+                    <td class="table-data">12</td>
+                </tr>
+                <tr>
+                    <td class="table-data">Crs:</td>
+                    <td class="table-data">8</td>
+                </tr> 
+            </table>`;
     let body = document.getElementById('home-page');
-    body.appendChild(newScoreboard);
-    body.appendChild(newScoreboardHard);
-    body.style.width = "100vw";
-    let newLeaderboard = document.getElementById('leaderboard')
-    newLeaderboard.style.width = '40%';
-    newLeaderboard.style.position = 'relative';
-    newLeaderboard.style.float = 'left';
-    let newLeaderboardHard = document.getElementById('leaderboard-hard')
-    newLeaderboardHard.style.width = '40%';
-    newLeaderboardHard.style.position = 'relative';
-    newLeaderboardHard.style.float = 'right';
+        body.appendChild(newScoreboard);
+        body.appendChild(newScoreboardHard);
+        body.style.width = "100vw";
+    let newLeaderboard = document.getElementById('leaderboard');
+        newLeaderboard.style.width = '40%';
+        newLeaderboard.style.position = 'relative';
+        newLeaderboard.style.float = 'left';
+    let newLeaderboardHard = document.getElementById('leaderboard-hard');
+        newLeaderboardHard.style.width = '40%';
+        newLeaderboardHard.style.position = 'relative';
+        newLeaderboardHard.style.float = 'right';
 }
+
 //First function that executes when a username is submitted. It's Purpose is to Remove the Form element, push the inputted name to the array.
 //And create an instructions page with a play button that will begin the game.
 function usernameEntry(event) {
     let form = document.getElementById("name-select");
 //This pushes the counter down so that it is not in contanct with the instructions on mobile devices    
     var mw = window.matchMedia( "(max-width: 360px)" );
-if(mw.matches){
-    let counter = document.getElementById('counter');
-    counter.style.marginTop = "120px";
-}
+    if(mw.matches){
+        let counter = document.getElementById('counter');
+        counter.style.marginTop = "120px";
+    }
+
     event.preventDefault();
 // push the inputted name, remove the form.    
     let username = document.getElementById("username");
@@ -119,8 +124,10 @@ if(mw.matches){
     let title = document.createElement("h1");
         title.setAttribute('id', 'title');
         title.style.color = "red";
+
     let instructions = document.createElement("p");
         instructions.setAttribute('id', 'instructions');
+
     let play = document.createElement("img");
         play.style.height = '100px';
         play.style.width = '150px';
@@ -132,11 +139,13 @@ if(mw.matches){
         title.style.color = "white";
         instructions.innerHTML = "After the countdown a random key will be displayed in the circle, you will have 1 second to hit the same key before it changes. A correct click = 1 point, 5 mis-clicks and the game ends. there is a max score of 40 if you make it to the end. Click the Game over screen at the end to play again. Good Luck!";
         instructions.style.color = "white";
-        let screen = document.getElementById("menu-game-screen");
+    
+    let screen = document.getElementById("menu-game-screen");
         screen.appendChild(title);
         screen.appendChild(instructions);
         screen.appendChild(play);
 }
+
 // a function that is called when the player starts the game.
 // it simply turns the title within the gamescreen into a 5 second countdown. at 0 the game function is called.
 function startTimer(event){
@@ -158,6 +167,7 @@ function startTimer(event){
 }
 let form = document.getElementById("name-select");
     form.addEventListener('submit', usernameEntry);
+
 // the game runnning function that generates a random key, tracks the key pressed and provides on out come eitherway. when 5 mis clicks are counted the game ends, or if the game runs 40 cycles through
 function startTheGame(event) {
 // if the game is played on mobile the title is removed so that tyhe game screen can be clearly seen when a mobile keyboard is displayed.    
@@ -191,11 +201,11 @@ function startTheGame(event) {
         }
        //This condition produces the random key and chnages the color every new key in order to keep a change if the random key is the same as the last
        if (timesRun != 40){
-        console.log("first if works")
+            console.log("first if works")
             if(dificultyArray[x] == 'easy'){
                 let i = Math.floor(Math.random() * (33-0+1));
-                console.log(i);
-                title.innerHTML = keyArray[i];
+                    console.log(i);
+                    title.innerHTML = keyArray[i];
                 if(title.style.color == "red"){
                     title.style.color = "blue";
                 } else {
@@ -205,8 +215,8 @@ function startTheGame(event) {
         }
         if(dificultyArray[x] == 'hard'){
             let i = Math.floor(Math.random() * (50-0+1));
-            console.log(i);
-            title.innerHTML = keyArrayHard[i];
+                console.log(i);
+                title.innerHTML = keyArrayHard[i];
             if(title.style.color == "red"){
                 title.style.color = "blue";
             } else {
@@ -219,44 +229,45 @@ function startTheGame(event) {
     var roundCount = 0;
     var sec = 1000;
     var failCount = 0;
-    failArray = [];
+        failArray = [];
     var interval = setInterval(newKey, sec); 
-    instructions.remove();
-    playButton.remove();
+        instructions.remove();
+        playButton.remove();
 //the function that tracks and generates keys, also tracking and counting fails
     function keyPress(event) {
         if (event.key == title.innerHTML) {
             var audio = new Audio("assets/audio/correct.mp3");
-            audio.play();
-            console.log(event.key);
+                audio.play();
+                console.log(event.key);
             let score = document.getElementById("counter");
-            score.innerHTML++;
+                score.innerHTML++;
         } else { if(event.shiftKey){return false}
             var audio = new Audio("assets/audio/fail.mp3");
-            audio.play();
-            failCount += 1;
+                audio.play();
+                failCount += 1;
             let failSigns = document.getElementById(failCount);
-            failSigns.style.color = "red";
-            failSigns.style.borderColor = "black";
-            failSigns.innerHTML = `<i class="fa-solid fa-burst"></i>`
-            failArray.push(failCount);
+                failSigns.style.color = "red";
+                failSigns.style.borderColor = "black";
+                failSigns.innerHTML = `<i class="fa-solid fa-burst"></i>`;
+                failArray.push(failCount);
             if(failArray.push() == 5){
                 clearInterval(interval);  
-            body.removeEventListener('keydown', keyPress); 
-            endGame();     
+                body.removeEventListener('keydown', keyPress); 
+                endGame();     
             }
         }
     }
     let body = document.getElementById('home-page');
-body.addEventListener('keydown', keyPress);
+        body.addEventListener('keydown', keyPress);
 }
+
 // end game function is called when the count = 40, logs the users name and score. needs a sort function  
 function endGame() {
 // first the game over screen is shown   
     let newScreen = document.getElementById('menu-game-screen');
-    newScreen.style.backgroundImage = "url('assets/images/gameOver.jpg')";
-    title.remove();
-    console.log("end reached");
+        newScreen.style.backgroundImage = "url('assets/images/gameOver.jpg')";
+        title.remove();
+        console.log("end reached");
     let dArray = dificultyArray.push() - 1;
 // the users name is then pulled from the array, the score is added and then put to the table.
     let score = document.getElementById("counter");
@@ -265,7 +276,7 @@ function endGame() {
     let x = userArray.push() - 1;
         console.log(userArray[x] + ': ' + finalScore);
     let leaderboard = document.getElementById("leaderboard");
-    let leaderboardHard = document.getElementById("leaderboard-hard")
+    let leaderboardHard = document.getElementById("leaderboard-hard");
     let newRow = document.createElement("tr");
     if (dificultyArray[dArray] == 'easy'){
         leaderboard.appendChild(newRow);
@@ -276,10 +287,10 @@ function endGame() {
         newRow.setAttribute('id', 'userInput' + x);
     }
     const gameData = document.querySelector('#userInput' + x);
-        let newName = document.createElement("td");
+    let newName = document.createElement("td");
         newName.innerHTML = userArray[x] + ':';
         gameData.appendChild(newName);
-        let newScore = document.createElement("td");
+    let newScore = document.createElement("td");
         newScore.innerHTML = finalScore;
         console.log(newScore);
         gameData.appendChild(newScore);
@@ -289,70 +300,74 @@ function endGame() {
         returnToMenuDiv.setAttribute('onmouseenter', 'hover();');
         returnToMenuDiv.setAttribute('onmouseleave', 'hoverDown();');
     let returnToMenu = document.getElementById("menu-game-screen");
-    returnToMenu.addEventListener('onclick', resetMenu);
+        returnToMenu.addEventListener('onclick', resetMenu);
 }
+
 // simple hover effects made to give clear indication of user interactivity
 function hover(event) {
     if(returnToMenu.style.backgroundImage != null){
         let returnToMenuDiv = document.getElementById("menu-game-screen");
-        returnToMenuDiv.style.scale = '1.05';
+            returnToMenuDiv.style.scale = '1.05';
     }
 }
+
 function hoverDown(event) {
     if (returnToMenu.style.backgroundImage != null){
         let returnToMenuDiv = document.getElementById("menu-game-screen");
-        returnToMenuDiv.style.scale = '1';
+            returnToMenuDiv.style.scale = '1';
     }
 }
+
 let returnToMenu = document.getElementById("menu-game-screen");
     returnToMenu.addEventListener('onmouseenter', hover);
     returnToMenu.addEventListener('onmouseleave', hoverDown);
+
 // the reset menu recreates the initial conditions of the site, so that a new name can be inputted and the game can be replayed.
 function resetMenu(event) {
     let returnToMenu = document.getElementById("menu-game-screen");
-    returnToMenu.removeAttribute('onclick', 'resetMenu();');
-    returnToMenu.removeAttribute('onmouseenter', 'hover();');
-    returnToMenu.removeAttribute('onmouseleave', 'hoverDown();');
-    returnToMenu.style.scale = '1'
+        returnToMenu.removeAttribute('onclick', 'resetMenu();');
+        returnToMenu.removeAttribute('onmouseenter', 'hover();');
+        returnToMenu.removeAttribute('onmouseleave', 'hoverDown();');
+        returnToMenu.style.scale = '1'
     let newMenu = document.createElement('form');
         newMenu.setAttribute('id', 'name-select');
         newMenu.setAttribute('action', 'https://formdump.codeinstitute.net/');
         newMenu.setAttribute('method', 'post'); 
         newMenu.innerHTML = 
-    `<div id="dificulty">
-        <label for="easy">Easy:</label>
-        <input name="dificulty" id="easy" type="radio" value="easy" checked>
-        <label for="hard">Hard:</label>
-        <input name="dificulty" id="hard" type="radio" value="hard">
-    </div>
-    <div id="input">
-        <label id="user-label" for="username">Username:</label>
-        <input id="username" name="username" type="text" maxlength="3" required>
-    </div>
-    <input  id="submit" type="image" name="submit" alt="submit" aria-label="submit" src="assets/images/pixilart-drawing-(start).png">`;
+            `<div id="dificulty">
+                <label for="easy">Easy:</label>
+                <input name="dificulty" id="easy" type="radio" value="easy" checked>
+                <label for="hard">Hard:</label>
+                <input name="dificulty" id="hard" type="radio" value="hard">
+            </div>
+            <div id="input">
+                <label id="user-label" for="username">Username:</label>
+                <input id="username" name="username" type="text" maxlength="3" required>
+            </div>
+            <input  id="submit" type="image" name="submit" alt="submit" aria-label="submit" src="assets/images/pixilart-drawing-(start).png">`;
 // if on mobile it is here where the title/logo is recreated.    
     if(mq.matches){
         let newLogo = document.createElement('header');
-        newLogo.innerHTML = `<h1>the touch type game</h1>`;
-        newLogo.setAttribute('id', 'logo')
+            newLogo.innerHTML = `<h1>the touch type game</h1>`;
+            newLogo.setAttribute('id', 'logo');
         let firstDiv = document.getElementById('fail-div');
         let body = document.getElementById('home-page');
-        body.insertBefore(newLogo, firstDiv);
+            body.insertBefore(newLogo, firstDiv);
     }
     let screen = document.getElementById("menu-game-screen");
         screen.style.backgroundImage = null;
         screen.appendChild(newMenu);
 // the fail icons are reset to green.   
-        for (let i = 1; i < 6; i++){
+    for (let i = 1; i < 6; i++){
         console.log(i);
-    let failReset = document.getElementsByClassName('fail');
-    failReset.namedItem(i).style.color = "greenyellow";
-    failReset.namedItem(i).style.borderColor = "white";
-    failReset.namedItem(i).innerHTML = `<i class="fa-brands fa-space-awesome">`
-    sortTable();
+        let failReset = document.getElementsByClassName('fail');
+            failReset.namedItem(i).style.color = "greenyellow";
+            failReset.namedItem(i).style.borderColor = "white";
+            failReset.namedItem(i).innerHTML = `<i class="fa-brands fa-space-awesome">`;
+        sortTable();
     }
     let newCounter = document.getElementById('counter');
-    newCounter.innerHTML = 0;
+        newCounter.innerHTML = 0;
     //Sort table function tken from w3schools credit to https://www.w3schools.com/howto/howto_js_sort_table.asp
     function sortTable() {
         var table, rows, switching, z, x, y, shouldSwitch;
@@ -395,7 +410,7 @@ function resetMenu(event) {
         }
       }
       let form = document.getElementById("name-select");
-    form.addEventListener('submit', usernameEntry);
-    let radioSelect = document.getElementById("dificulty");
-    radioSelect.addEventListener('click', dificultySelect);
+          form.addEventListener('submit', usernameEntry);
+      let radioSelect = document.getElementById("dificulty");
+          radioSelect.addEventListener('click', dificultySelect);
 }

@@ -226,7 +226,6 @@ function startTheGame(event) {
     }
 // these are the variables that are created to keep the game running, including tyhe run count, interval time and fail count    
     var timesRun = 0;
-    var roundCount = 0;
     var sec = 1000;
     var failCount = 0;
         failArray = [];

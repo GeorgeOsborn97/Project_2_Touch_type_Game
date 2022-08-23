@@ -188,7 +188,7 @@ function startTheGame(event) {
     title.style.fontSize = "120px";
     title.innerHTML = "GO!";
     let x = dificultyArray.push() - 1;
-        console.log(dificultyArray[x])
+        console.log(dificultyArray[x]);
 //This function produces the random key and chnages the color every new key in order to keep a change if the random key is the same as the last
 // it also keeps a track of the amount of keys shown when the count hits 40 the game ends.
     function newKey() {
@@ -201,7 +201,7 @@ function startTheGame(event) {
         }
        //This condition produces the random key and chnages the color every new key in order to keep a change if the random key is the same as the last
        if (timesRun != 40){
-            console.log("first if works")
+            console.log("first if works");
             if(dificultyArray[x] == 'easy'){
                 let i = Math.floor(Math.random() * (33-0+1));
                     console.log(i);
@@ -408,6 +408,7 @@ function resetMenu(event) {
           }
         }
       }
+      dificultyArray=['easy']
       let form = document.getElementById("name-select");
           form.addEventListener('submit', usernameEntry);
       let radioSelect = document.getElementById("dificulty");

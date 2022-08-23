@@ -356,7 +356,13 @@ function resetMenu(event) {
     //Sort table function tken from w3schools credit to https://www.w3schools.com/howto/howto_js_sort_table.asp
     function sortTable() {
         var table, rows, switching, z, x, y, shouldSwitch;
-        table = document.getElementById("leaderboard");
+        let dArray = dificultyArray.push() - 1;
+        if (dificultyArray[dArray] == 'easy'){
+            table = document.getElementById("leaderboard");
+        }
+        else {
+            table = document.getElementById("leaderboard-hard");
+        }
         switching = true;
         /*Make a loop that will continue until
         no switching has been done:*/

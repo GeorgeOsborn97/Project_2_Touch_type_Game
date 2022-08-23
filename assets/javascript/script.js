@@ -156,7 +156,6 @@ function startTimer(event){
         }
     }
 }
-
 let form = document.getElementById("name-select");
     form.addEventListener('submit', usernameEntry);
 // the game runnning function that generates a random key, tracks the key pressed and provides on out come eitherway. when 5 mis clicks are counted the game ends, or if the game runs 40 cycles through
@@ -190,8 +189,6 @@ function startTheGame(event) {
             body.removeEventListener('keydown', keyPress); 
             endGame();     
         }
-        //this is not functioning at the moment, look in the future at increasing speed every 10 rounds
-        
        //This condition produces the random key and chnages the color every new key in order to keep a change if the random key is the same as the last
        if (timesRun != 40){
         console.log("first if works")
@@ -239,13 +236,13 @@ function startTheGame(event) {
             let failSigns = document.getElementById(failCount);
             failSigns.style.color = "red";
             failSigns.style.borderColor = "black";
+            failSigns.innerHTML = `<i class="fa-solid fa-burst"></i>`
             failArray.push(failCount);
             if(failArray.push() == 5){
                 clearInterval(interval);  
             body.removeEventListener('keydown', keyPress); 
             endGame();     
             }
-
         }
     }
     let body = document.getElementById('home-page');
@@ -284,7 +281,6 @@ function endGame() {
         newScore.innerHTML = finalScore;
         console.log(newScore);
         gameData.appendChild(newScore);
-
     //create a button that returns back to the original user inout for replayability
     let returnToMenuDiv = document.getElementById("menu-game-screen");
         returnToMenuDiv.setAttribute('onclick', 'resetMenu();');
@@ -323,7 +319,7 @@ function resetMenu(event) {
         newMenu.innerHTML = 
     `<div id="dificulty">
         <label for="easy">Easy:</label>
-        <input name="dificulty" id="easy" type="radio" value="easy">
+        <input name="dificulty" id="easy" type="radio" value="easy" checked>
         <label for="hard">Hard:</label>
         <input name="dificulty" id="hard" type="radio" value="hard">
     </div>
@@ -350,6 +346,7 @@ function resetMenu(event) {
     let failReset = document.getElementsByClassName('fail');
     failReset.namedItem(i).style.color = "greenyellow";
     failReset.namedItem(i).style.borderColor = "white";
+    failReset.namedItem(i).innerHTML = `<i class="fa-brands fa-space-awesome">`
     sortTable();
     }
     let newCounter = document.getElementById('counter');
@@ -393,5 +390,4 @@ function resetMenu(event) {
     form.addEventListener('submit', usernameEntry);
     let radioSelect = document.getElementById("dificulty");
     radioSelect.addEventListener('click', dificultySelect);
-
 }

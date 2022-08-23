@@ -262,15 +262,19 @@ function startTheGame(event) {
 
 // end game function is called when the count = 40, logs the users name and score. needs a sort function  
 function endGame() {
-// first the game over screen is shown   
+// first the game over screen is shown
+    let score = document.getElementById("counter");
+    var finalScore = score.innerHTML;   
     let newScreen = document.getElementById('menu-game-screen');
+    if(score.innerHTML == 40){
+        newScreen.style.backgroundImage = "url('assets/images/winner.png')";
+    } else{
         newScreen.style.backgroundImage = "url('assets/images/gameOver.jpg')";
+    }    
         title.remove();
         console.log("end reached");
     let dArray = dificultyArray.push() - 1;
 // the users name is then pulled from the array, the score is added and then put to the table.
-    let score = document.getElementById("counter");
-    var finalScore = score.innerHTML;
         console.log(userArray);
     let x = userArray.push() - 1;
         console.log(userArray[x] + ': ' + finalScore);

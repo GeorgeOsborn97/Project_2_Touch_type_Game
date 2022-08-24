@@ -12,28 +12,48 @@ function dificultySelect(event){
         dificultyArray.push('easy');
     }
     if (dificultyHard.checked){
-        dificultyArray.push('hard');
-       let y = document.getElementById("box")
-        console.log(y.clientWidth)
-            let id = null;
-            const elem = document.getElementById("animation");  
-            let pos = 0;
-            clearInterval(id);
-            id = setInterval(frame, 5);
-            function frame() {
-              if (pos == y.clientWidth*0.5) {
-                clearInterval(id);
-              } else {
-                pos++;  
-                elem.style.left = pos + "px"; 
-              }
-            }
-          
+        dificultyArray.push('hard');    
     }
     console.log(dificultyArray);
 }
 let radioSelect = document.getElementById("dificulty");
     radioSelect.addEventListener('click', dificultySelect);
+//ufo animation
+
+function ufoEnter(event){
+   let fade = setInterval(function () {
+        for( i = 0; i == 10; i++){
+        console.log(i);
+        }
+        let portal = document.getElementById('animation')
+        portal.style.opacity = '0.2'
+        portal.style.transition = '10s'
+        if (i == 10){
+        portal.innerHTML = `<img alt='ufo' src='assets/images/ufo.png'>`
+        clearInterval(fade)
+        } 
+    }, 1000);
+}    
+document.addEventListener('DOMContentLoaded', ufoEnter)
+
+
+function moveUp() {
+    let y = document.getElementById("box")
+    console.log(y.clientHeight)
+        let id = null;
+        const elem = document.getElementById("animation");  
+        let pos = 0;
+        clearInterval(id);
+        id = setInterval(frame, 5);
+        function frame() {
+          if (pos == y.clientHeight) {
+            clearInterval(id);
+          } else {
+            pos++;  
+            elem.style.bottom = pos + "px"; 
+          }
+        }
+    }        
 
 // styling for the first fail blocks as css can not to target id if its numerical
 let fifthFail = document.getElementById('5');

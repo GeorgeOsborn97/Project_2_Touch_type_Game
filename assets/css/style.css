@@ -168,14 +168,22 @@ header{
 }
 #box{
     margin-top:5px;
-    width: 100vw;
-    height: 50px;
+    margin: 0 auto;
+    width: 350px;
+    height: 20vh;
     position: relative;
+    text-align: center;
 }
 #animation{
     height: 50px;
     width: 50px;
     position: absolute;
+    bottom:10px;
+    opacity: 1;
+}
+.fadeout {
+    opacity: 0.2;
+    transition: 10s;
 }
 /*responsove styling for diffrenet screen sizes.*/
 @media screen and (max-width:865px){

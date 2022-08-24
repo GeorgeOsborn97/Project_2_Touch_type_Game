@@ -46,7 +46,7 @@ if(mq.matches) {
         newScoreboard.innerHTML = 
             `<table id="leaderboard">
                 <tr>
-                    <th id="leaderboard-heading">Leaderboard</th>
+                    <th id="leaderboard-heading">Leaderboard (e)</th>
                 </tr>
                 <tr>
                     <td class="table-data">Mrk:</td>
@@ -144,6 +144,9 @@ function usernameEntry(event) {
         screen.appendChild(title);
         screen.appendChild(instructions);
         screen.appendChild(play);
+        var audio = new Audio("assets/audio/background.mp3");
+    audio.loop = true;
+    audio.play();
 }
 
 // a function that is called when the player starts the game.
@@ -200,7 +203,7 @@ function startTheGame(event) {
             endGame();     
         }
        //This condition produces the random key and chnages the color every new key in order to keep a change if the random key is the same as the last
-       if (timesRun != 40){
+       if (timesRun != 41){
             console.log("first if works");
             if(dificultyArray[x] == 'easy'){
                 let i = Math.floor(Math.random() * (33-0+1));
@@ -268,8 +271,12 @@ function endGame() {
     let newScreen = document.getElementById('menu-game-screen');
     if(score.innerHTML == 40){
         newScreen.style.backgroundImage = "url('assets/images/winner.png')";
+        var audio = new Audio("assets/audio/victory.mp3");
+                audio.play();
     } else{
         newScreen.style.backgroundImage = "url('assets/images/gameOver.jpg')";
+        var audio = new Audio("assets/audio/game-over.mp3");
+                audio.play();
     }    
         title.remove();
         console.log("end reached");

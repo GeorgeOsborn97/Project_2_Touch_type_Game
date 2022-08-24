@@ -13,6 +13,22 @@ function dificultySelect(event){
     }
     if (dificultyHard.checked){
         dificultyArray.push('hard');
+       let y = document.getElementById("box")
+        console.log(y.clientWidth)
+            let id = null;
+            const elem = document.getElementById("animation");  
+            let pos = 0;
+            clearInterval(id);
+            id = setInterval(frame, 5);
+            function frame() {
+              if (pos == y.clientWidth*0.5) {
+                clearInterval(id);
+              } else {
+                pos++;  
+                elem.style.left = pos + "px"; 
+              }
+            }
+          
     }
     console.log(dificultyArray);
 }

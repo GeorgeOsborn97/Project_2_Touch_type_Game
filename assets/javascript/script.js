@@ -4,7 +4,7 @@ let keyArrayHard = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 
 let userArray= ['Mark', 'George', 'Ben', 'Chris'];
 let dificultyArray = ['easy'];
 
-// this allows the difficulty to be selected
+// this allows the difficulty to be selected whist changing the ufo description
 function dificultySelect(event){
     let dificultyEasy = document.getElementById("easy");
     let dificultyHard = document.getElementById("hard");
@@ -23,7 +23,7 @@ function dificultySelect(event){
 let radioSelect = document.getElementById("dificulty");
     radioSelect.addEventListener('click', dificultySelect);
 
-//ufo animation
+//this function that runs on the laoding of the page governs the fading in and out of the 'portal and 'ufo'
 function ufoEnter(event){
     document.getElementById('hard').disabled = true;
     document.getElementById('easy').disabled = true;
@@ -36,7 +36,6 @@ function ufoEnter(event){
         portalDelete.style.opacity = '0';
         portalDelete.style.transition = '5s';
         if (i == 5){
-         
         portal.innerHTML = `<img alt='ufo' src='assets/images/ufo-easy.png'>`;
         portal.className = 'fadeIn'
         portal.style.opacity = '1'
@@ -50,7 +49,8 @@ function ufoEnter(event){
 }    
 document.addEventListener('DOMContentLoaded', ufoEnter)
 
-
+// this function governs the movement of the 'ufo' when it entyers the page. this is a modified version of w3schools function.
+// the original cvan be foud here: https://www.w3schools.com/js/js_htmldom_animate.asp
 function moveUp() {
     let y = document.getElementById("box")
     console.log(y.clientHeight)
@@ -91,7 +91,7 @@ if(mq.matches) {
     }
     document.addEventListener('DOMContentLoaded', mobileLoad);
 
-//Remakes the scoreboard as a new div so that it appears under the game screen instead of to the left of it.    
+//Remakes the scoreboards as a new div so that it appears under the game screen instead of to the left of it.    
     let mainCounter = document.getElementById('counter');
         mainCounter.style.marginTop = '30px';
     let scoreboard = document.getElementById('scoreboard');
@@ -181,7 +181,8 @@ function usernameEntry(event) {
     let user = username.value;
         userArray.push(user);
         form.remove();
-// create new h1, p and img elements. the img acts as a button that moves the player on to the game.        
+// create new h1, p and img elements. the img acts as a button that moves the player on to the game.    
+// this also begins the background music.    
     let title = document.createElement("h1");
         title.setAttribute('id', 'title');
         title.style.color = "red";
@@ -342,7 +343,7 @@ function endGame() {
         title.remove();
         console.log("end reached");
     let dArray = dificultyArray.push() - 1;
-// the users name is then pulled from the array, the score is added and then put to the table.
+// the users name is then pulled from the array, the score is added and then put to the relevent table.
         console.log(userArray);
     let x = userArray.push() - 1;
         console.log(userArray[x] + ': ' + finalScore);
@@ -365,7 +366,7 @@ function endGame() {
         newScore.innerHTML = finalScore;
         console.log(newScore);
         gameData.appendChild(newScore);
-    //create a button that returns back to the original user inout for replayability
+    //create a button that returns back to the original user input for replayability
     let returnToMenuDiv = document.getElementById("menu-game-screen");
         returnToMenuDiv.setAttribute('onclick', 'resetMenu();');
         returnToMenuDiv.setAttribute('onmouseenter', 'hover();');

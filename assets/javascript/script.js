@@ -10,9 +10,13 @@ function dificultySelect(event){
     let dificultyHard = document.getElementById("hard");
     if (dificultyEasy.checked){
         dificultyArray.push('easy');
+        let portal = document.getElementById('animation');
+            portal.innerHTML = `<img alt='ufo' src='assets/images/ufo-easy.png'>`
     }
     if (dificultyHard.checked){
-        dificultyArray.push('hard');    
+        dificultyArray.push('hard');
+        let portal = document.getElementById('animation');
+            portal.innerHTML = `<img alt='ufo' src='assets/images/ufo-hard.png'>`  
     }
     console.log(dificultyArray);
 }
@@ -21,18 +25,26 @@ let radioSelect = document.getElementById("dificulty");
 //ufo animation
 
 function ufoEnter(event){
+    document.getElementById('hard').disabled = true;
+    document.getElementById('easy').disabled = true;
+    let i = 1;
    let fade = setInterval(function () {
-        for( i = 0; i == 10; i++){
-        console.log(i);
-        }
-        let portal = document.getElementById('animation')
-        portal.style.opacity = '0.2'
-        portal.style.transition = '10s'
+    i++;
+    console.log(i);
+        let portal = document.getElementById('animation');
+        portal.style.opacity = '0.2';
+        portal.style.transition = '10s';
         if (i == 10){
-        portal.innerHTML = `<img alt='ufo' src='assets/images/ufo.png'>`
-        clearInterval(fade)
+        portal.innerHTML = `<img alt='ufo' src='assets/images/ufo-easy.png'>`;
+        portal.className = 'fadeIn'
+        portal.style.opacity = '1'
+        portal.style.transition = '10s'
+        portal.style.scale = '2'
+        clearInterval(fade);
+        moveUp();
         } 
     }, 1000);
+
 }    
 document.addEventListener('DOMContentLoaded', ufoEnter)
 
@@ -46,11 +58,18 @@ function moveUp() {
         clearInterval(id);
         id = setInterval(frame, 5);
         function frame() {
-          if (pos == y.clientHeight) {
+          if (pos == 120) {
             clearInterval(id);
           } else {
             pos++;  
             elem.style.bottom = pos + "px"; 
+            var mq = window.matchMedia( "(max-width: 800px)" );
+            document.getElementById('hard').disabled = false;
+            document.getElementById('easy').disabled = false;
+            if(mq.matches) {
+                document.getElementById('hard').disabled = true;
+                elem.style.zIndex = '1';
+            }
           }
         }
     }        

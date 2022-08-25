@@ -80,6 +80,13 @@ header{
 #submit{
     height:75px;
 }
+#submit:hover{
+    scale:1.05;
+}
+#playButton:hover{
+    scale:1.05;
+}
+
 /*Endure the text inputted follows the style of the site*/
 #username{
     text-transform: uppercase;
@@ -310,7 +317,7 @@ header{
         margin-right:5px;
         margin-top:10px;
         padding-bottom: 15px;
-       }
+    } 
     
 }
 @media screen and (max-width:300px){

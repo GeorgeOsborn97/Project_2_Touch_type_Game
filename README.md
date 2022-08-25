@@ -9,16 +9,16 @@ Find a link to the deployed site [here](https://georgeosborn97.github.io/Code-In
 1. [User experiance](#user-experiance)
    - [Mockup desings](#simple-initial-design-plans)
 2. [Final product](#final-product)
-   - [Before submission](#Before-Submission)
-   - [After Submission](#After-Submission)
-   - [Whilst playing](#Whilst-Playing)
-   - [After playing](#After-Playing)
+   - [Before submission](#before-submission)
+   - [After Submission](#after-submission)
+   - [Whilst playing](#whilst-playing)
+   - [After playing](#after-playing)
 3. [Features](#features)
-   - [The background image and the general formatting](#the-background-image-and-the-general-formatting)
-   - [Navigation bar](#navigation-bar)
-   - [Information formatting](#neatly-formatted-information)
-   - [Video/map](#videomap)
-   - [Social links](#social-links)
+   - [The background and imagary](#the-background-and-imagary)
+   - [The audio](#the-audio)
+   - [General formatting](#general-formatting)
+   - [The Game-Screen](#the-game-screen)
+   - [Scoreboards](#scoreboards)
    - [Brand links](#brand-links)
    - [User form](#ask-us-form)
 4. [Technology that was utilised](#technology-that-was-utilised)   
@@ -71,66 +71,69 @@ ___
 ![Final image of the top of the homeIndex page after playing](assets/readme-images/final-images/final-image-page2-bottom.png)
 ___
 ## Features: 
-### The background image and the general formatting:
-   - the background image aims to provides a feeling of warmth and joy due to the striking bright sun that captures the users initial attention.
-   - the image aims to stand out and without distracting from the purpose of the site, its content. The fieldset provides enough difference to draw you to it without conflicting with the image.
-   - the navigation elements at the top of the page are clear yet do not distract from the main text
+### The background and imagary:
+   - the background image aims to provides a fitting general setting for the site, whilst not distracting from the elements the user will have the most interaction with.
+   - The background slowly zooms in as to give the site a sense of life. The speed of this effect was considered heavily as it could not distract the user from the game whilst they are playing.
+   - The pixilated text, space theme of the background and icons were specifically choosen to provide a sense of nostalgia. They aim to be reminiscent of games such as space invaders and astroids. 
 ![what the user first sees](assets/readme-images/opening-main-img.png)   
-### Navigation bar: 
-   - The simple clapsable navigation Icon provides the user a simple and effective way to navigate to the different pages of the site.
-   - The styling is consistant throughout all pages and shows clearly which page the user is currently in as well as the repsonisve colour change that clearly highlights user interaction.
-   - The main header/logo of the page is also a clickable link as is common place in many websites across the web.
-![shut navigation bar image](assets/readme-images/shut-navbar.png)
-![open navigation bar image](assets/readme-images/open-navbar.png)
-### Neatly formatted information:
-   - To avoid large portions of text that may confuse the user, all key information is contained within clapsable elements.
-   - the clapsable elements clearly register interaction with a clear colour change and slight size shift. Enough to be visible but not distracting.
-   - With the large blocks of text hidden the user will be able to more easily find the specific information they seek.
-![shut text block](assets/readme-images/clapsed-text.png)  
+### The audio: 
+   - There is a background piece of music that beigns after the user has submitted their name and difficulty. It follows the classic sci-fi game theme of the site and aims to begin to immerse the user.
+   - Different sound effects are utilised throughout, the key ones are the 'fail' sound and 'correct' sound. These are present to give an audible que within the game, but also to provide a bit of tension to the game.
+   - All audio utilised is all in servce of immersion and to make the game and by extension the site as a whole feel more alive and responsive to the user.
+### General formatting:
+   - To avoid distarction the 'game-screen' is front and centre on all devices.
+   - All user interactivity occurs within the 'game-screen' this is done specifically to keep consistancy of where and how the key informtion is presented
+   - All key elements have a border to help them stand out to the user. White is used consistantly to provide contrast from the dark background. The only exception to the is the 'game-screen'. Its border is purple as are a many of the elements within. This is done to draw the users focus to it as although it's a darker color, It stands out against the rest of the elements. 
 ![open text block](assets/readme-images/open-text.png) 
-### Video/map: 
-   - The video in the index is completely user controlled they can choose to view it or not.
-   - The aim of the video is to provide an additional more visual hook to the website that carries on the themes and goals of this site.
-   - The map like the video provides are visual hook, however the purpose of this map is to give additional information regarding a specific topic in page 2.
+### The Game-Screen: 
+   - The game-screen is the central div. It's formatted slightly differently from the rest of the elements in order to draw the users attention.
+   - Initially the game-screen contains a place for the user to input a name and the difficulty that they wish to play at. (the differences are specified to by the 'ufo')
+   - After submitting a name the form is removed and replaced with a small title, a paragraph defining the rules of the game and a new button that starts the game.
+   - When the play button is clicked the title turns into a 5 second countdown, after which the instructions are removed, the title is blown up and is replaced by a random key taht the user needs to match to gain a point.
+   - After the game the screen changes again to a winner or looser screen.
+   - If the user clicks on the sceen one final time their initally inputted name and their score is logged to the relevent table, and the original form is recreated.
 ![video on home page](assets/readme-images/video-image.png)  
 ![map on "getting started"](assets/readme-images/map-image.png) 
-### Social links:
-   - The social links at the bottom of every page simply allow the user to follow me on various social media platforms to see a more personal take on snowpsorts.
+### Scoreboards:
+   - There are two scoreboards to represent the different modes, easy and hard. The users name and score is logged to the relevent board on completion of the game and is then sorted into numerical order, highest to lowest.
 ![social links](assets/readme-images/social-footer.png)   
-### Brand links:
-   - The brands links allow the user to go on to the various brands specific websites in a blank tab, in order to see for themselves what kind of equipment is out there and with the aid of this site make an informed decision on what they need.
+### Score counter:
+   - The counter that sits under the game-screen simply tacks the users score. For every succesful click the counter increases by one. When the game ends the counter stops tracking the users key presses.
 ![links to external brands](assets/readme-images/retail-links.png)   
-### Ask us form:
-   - The user form on the final page provides the user the ability to ask a more specfic question about any topic in the world of snowsports.
-   - All areas must be filled in in order to post the form.
+### Fail icons:
+   - At the top of the page are 5 green spaceships. These icons were chosen specifically to match the theme of the game.
+   - On a misclick the icons turn red, loose their border and become 'explosions'. If all 5 turn red the game ends. This feature aims to create a sense of urgency within the user and give the game as a whole a sense of drama.
+### UFO:
+   - The UFO is an attempt at a creative way to set forward a small bit of key information.
+   - The goal of this was to first of all set out the differences between the two modes and secondly to provide a striking opening image/effect that would grab the user as they enter the site.
 ![user form](assets/readme-images/user-form.png)   
 ___
 ## Technology that was utilised:
 ### languages:
 * HTML5
 * CSS3
+* javascript
 ### external assets utilised:
 * [GitHub](https://github.com/)
 * [GitPod](https://gitpod.io/)
 * [font awesome](https://fontawesome.com/)
 * [google fonts](https://fonts.google.com/)
-* [Uizard](https://uizard.io/)
+* [balsimq](https://uizard.com/)
 * [amiresponsive](https://ui.dev/amiresponsive)
 * Chrome devtools
 * Google images
 * [W3C HTML validator](https://validator.w3.org/)
 * [Jigsaw CSS validator](https://jigsaw.w3.org/css-validator/)
+* [JShint Javascript validator](https://jshint.com/)
 ___
 ## testing:
 In order to test responisve elements throughout the development process Chrome Devtools was used frequently.
 ### HTML W3C validation:
-   - On the first test, the width was set incorrectly for both iframes in the index and page 2. this was fixed by removing the width="" atribute and using the style="" attribute for the width.
-   - Also on the first test there was a highighted error in the iframes where i put a p element between the opening and closing tag. This had to be removed.
-   - in the validation for the "Ask us" page a label error was highlighted, this was fixed by adding aria-labels to the submit and reset buttons.
-   - on testing all pages there was a warning for sections with no headings, these were changed to divs to solve this.
-   - On final validation no errors were highlighted in any of the HTML code.
+      - Apart from some small typo errors nothing was highlighted during HTML validation.
 ### Jigsaw validation:
    - No errors were highlighted during CSS validation at any stage.
+### JShint validation:
+   - No errors were highlighted during javascript validation at any stage.   
 ### Lighthouse:
 #### Desktop results:
    - Index results

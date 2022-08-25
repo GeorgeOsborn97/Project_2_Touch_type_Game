@@ -6,6 +6,7 @@ body{
     font-family: 'Silkscreen', cursive;
     overflow-x: hidden;
 }
+/*a container made holding the same img as the body however this creates a zoom effect witout affecting other elements*/
 #image-container{
     background-image:url("../images/stars.jpg");
     overflow-x: hidden;
@@ -18,6 +19,7 @@ body{
     animation-fill-mode: forwards;
     animation-iteration-count: infinite;
 }
+/*the zoom scale*/
 @keyframes zoom-effect {
     from{
         transform: scale(1);
@@ -49,6 +51,7 @@ header{
     color:greenyellow;
     font-size:x-large;
 }
+/*define the size of the section that holds the main components of the site*/
 #mainSection{
     height:350px;
     width:100vw;
@@ -87,7 +90,7 @@ header{
     scale:1.05;
 }
 
-/*Endure the text inputted follows the style of the site*/
+/*Ensdure the text inputted follows the style of the site*/
 #username{
     text-transform: uppercase;
     font-family: inherit;
@@ -96,12 +99,16 @@ header{
 #user-label{
     color:white;
 }
-#dificulty{
+#difficulty{
     color:white;
     font-size:large;
     margin-bottom:20px;
 }
-/*Style ofr the scoreboard table, this changes depending on the device*/
+input[type='radio']:checked {
+    scale:2;
+}
+/*Style for the scoreboard tables, this changes depending on the device*/
+/*this is specifically for desktops, laptops and some large tablets*/
 #scoreboard{
     width:fit-content;
     height:350px;
@@ -117,6 +124,7 @@ header{
     float:left;
     position: relative;
 }
+/*style the look of the content within the scroreboards*/
 #leaderboard{
     color:white;
     width:50%;
@@ -173,6 +181,7 @@ header{
     color:white;
     font-size:50px;
 }
+/*defining the size and position of the portal and what will be the ufo on load*/
 #box{
     margin-top:5px;
     margin-left: 20px;
@@ -190,7 +199,6 @@ header{
     opacity: 1;
     scale: 2;
 }
-
 #animation{
     height: 50px;
     width: 50px;
@@ -199,6 +207,7 @@ header{
     bottom:10px;
     opacity: 0.2;
 }
+/*the first fade that occurs on load*/
 .fadeout {
     opacity: 0.2;
     transition: 5s;

@@ -23,11 +23,12 @@
         <span id="4" class="fail"><i class="fa-brands fa-space-awesome"></i></span>
         <span id="5" class="fail"><i class="fa-brands fa-space-awesome"></i></span>
         <span id="box">
+    <!--divs that contain the portal img and what will contain the ufo img-->        
             <div id="portal" class="fadeout"><img alt='portal' src='assets/images/portal.png'></div>
             <div id="animation" class="fadeout"></div>
         </span>
     </div>
-    <!--The table is prepopulated with results, however any user scores are inputted and sorted into the table on game over-->
+    <!--The two tables are prepopulated with results, however any user scores are inputted and sorted into the relevent table on game over-->
     <section id="mainSection">  
         <div id="scoreboard">
         <table id="leaderboard">
@@ -80,11 +81,11 @@
     <!--This is the heart of the site, initially containing the form for a username, the div then holds the instructions as well as where the game is played when the game starts-->  
     <div id="menu-game-screen">
         <form id="name-select" action="https://formdump.codeinstitute.net/" method="post">
-            <div id="dificulty">
+            <div id="difficulty">
                 <label for="easy">Easy:</label>
-                <input name="dificulty" id="easy" type="radio" value="easy" checked>
+                <input class="diff" name="difficulty" id="easy" type="radio" value="easy" checked required>
                 <label for="hard">Hard:</label>
-                <input name="dificulty" id="hard" type="radio" value="hard">
+                <input class="diff" name="difficulty" id="hard" type="radio" value="hard" required>
             </div>
             <div id="input">
                 <label id="user-label" for="username">Username:</label>

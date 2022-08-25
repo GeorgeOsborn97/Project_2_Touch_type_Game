@@ -2,31 +2,29 @@
 let keyArray = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
 let keyArrayHard = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', '1', '2', '3', '4', '5', '6', '7', '8', '9','!','"','£','$','^','*','(',')',',','.','/','?',';',':','[',']','#'];
 let userArray= ['Mark', 'George', 'Ben', 'Chris'];
-let dificultyArray = ['easy'];
+let difficultyArray = ['easy'];
 
 // this allows the difficulty to be selected whist changing the ufo description
-function dificultySelect(event){
-    let dificultyEasy = document.getElementById("easy");
-    let dificultyHard = document.getElementById("hard");
-    if (dificultyEasy.checked){
-        dificultyArray.push('easy');
+function difficultySelect(event){
+    let difficultyEasy = document.getElementById("easy");
+    let difficultyHard = document.getElementById("hard");
+    if (difficultyEasy.checked){
+        difficultyArray.push('easy');
         let portal = document.getElementById('animation');
             portal.innerHTML = `<img alt='ufo' src='assets/images/ufo-easy.png'>`
     }
-    if (dificultyHard.checked){
-        dificultyArray.push('hard');
+    if (difficultyHard.checked){
+        difficultyArray.push('hard');
         let portal = document.getElementById('animation');
             portal.innerHTML = `<img alt='ufo' src='assets/images/ufo-hard.png'>`  
     }
-    console.log(dificultyArray);
+    console.log(difficultyArray);
 }
-let radioSelect = document.getElementById("dificulty");
-    radioSelect.addEventListener('click', dificultySelect);
+let radioSelect = document.getElementById("difficulty");
+    radioSelect.addEventListener('click', difficultySelect);
 
 //this function that runs on the laoding of the page governs the fading in and out of the 'portal and 'ufo'
 function ufoEnter(event){
-    document.getElementById('hard').disabled = true;
-    document.getElementById('easy').disabled = true;
     let i = 1;
    let fade = setInterval(function () {
     i++;
@@ -66,8 +64,6 @@ function moveUp() {
             pos++;  
             elem.style.bottom = pos + "px"; 
             var mq = window.matchMedia( "(max-width: 800px)" );
-            document.getElementById('hard').disabled = false;
-            document.getElementById('easy').disabled = false;
             if(mq.matches) {
                 document.getElementById('hard').disabled = true;
                 elem.style.zIndex = '1';
@@ -252,8 +248,8 @@ function startTheGame(event) {
     title.style.padding = "80px, 80px, 80px, 80px";
     title.style.fontSize = "120px";
     title.innerHTML = "GO!";
-    let x = dificultyArray.push() - 1;
-        console.log(dificultyArray[x]);
+    let x = difficultyArray.push() - 1;
+        console.log(difficultyArray[x]);
 //This function produces the random key and chnages the color every new key in order to keep a change if the random key is the same as the last
 // it also keeps a track of the amount of keys shown when the count hits 40 the game ends.
     function newKey() {
@@ -267,7 +263,7 @@ function startTheGame(event) {
        //This condition produces the random key and chnages the color every new key in order to keep a change if the random key is the same as the last
        if (timesRun != 41){
             console.log("first if works");
-            if(dificultyArray[x] == 'easy'){
+            if(difficultyArray[x] == 'easy'){
                 let i = Math.floor(Math.random() * (33-0+1));
                     console.log(i);
                     title.innerHTML = keyArray[i];
@@ -278,7 +274,7 @@ function startTheGame(event) {
                 }
             }
         }
-        if(dificultyArray[x] == 'hard'){
+        if(difficultyArray[x] == 'hard'){
             let i = Math.floor(Math.random() * (50-0+1));
                 console.log(i);
                 title.innerHTML = keyArrayHard[i];
@@ -342,7 +338,7 @@ function endGame() {
     }    
         title.remove();
         console.log("end reached");
-    let dArray = dificultyArray.push() - 1;
+    let dArray = difficultyArray.push() - 1;
 // the users name is then pulled from the array, the score is added and then put to the relevent table.
         console.log(userArray);
     let x = userArray.push() - 1;
@@ -350,11 +346,11 @@ function endGame() {
     let leaderboard = document.getElementById("leaderboard");
     let leaderboardHard = document.getElementById("leaderboard-hard");
     let newRow = document.createElement("tr");
-    if (dificultyArray[dArray] == 'easy'){
+    if (difficultyArray[dArray] == 'easy'){
         leaderboard.appendChild(newRow);
         newRow.setAttribute('id', 'userInput' + x);
     }
-    if (dificultyArray[dArray] == 'hard'){
+    if (difficultyArray[dArray] == 'hard'){
         leaderboardHard.appendChild(newRow);
         newRow.setAttribute('id', 'userInput' + x);
     }
@@ -406,7 +402,7 @@ function resetMenu(event) {
         newMenu.setAttribute('action', 'https://formdump.codeinstitute.net/');
         newMenu.setAttribute('method', 'post'); 
         newMenu.innerHTML = 
-            `<div id="dificulty">
+            `<div id="difficulty">
                 <label for="easy">Easy:</label>
                 <input name="dificulty" id="easy" type="radio" value="easy" checked>
                 <label for="hard">Hard:</label>
@@ -443,8 +439,8 @@ function resetMenu(event) {
     //Sort table function tken from w3schools credit to https://www.w3schools.com/howto/howto_js_sort_table.asp
     function sortTable() {
         var table, rows, switching, z, x, y, shouldSwitch;
-        let dArray = dificultyArray.push() - 1;
-        if (dificultyArray[dArray] == 'easy'){
+        let dArray = difficultyArray.push() - 1;
+        if (difficultyArray[dArray] == 'easy'){
             table = document.getElementById("leaderboard");
         }
         else {
@@ -481,11 +477,11 @@ function resetMenu(event) {
           }
         }
       }
-      dificultyArray=['easy']
+      difficultyArray=['easy']
       let form = document.getElementById("name-select");
           form.addEventListener('submit', usernameEntry);
-      let radioSelect = document.getElementById("dificulty");
-          radioSelect.addEventListener('click', dificultySelect);
+      let radioSelect = document.getElementById("difficulty");
+          radioSelect.addEventListener('click', difficultySelect);
           let portal = document.getElementById('portal');
           portal.style.opacity = '1'
           portal.style.transition = '5s'

@@ -489,5 +489,7 @@ function resetMenu(event) {
           let portal = document.getElementById('portal');
           portal.style.opacity = '1'
           portal.style.transition = '5s'
+          var audio = new Audio("assets/audio/ufo.mp3");
+          audio.play();
           ufoEnter();
 }

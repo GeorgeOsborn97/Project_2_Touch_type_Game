@@ -22,6 +22,10 @@
         <span id="3" class="fail"><i class="fa-brands fa-space-awesome"></i></span>
         <span id="4" class="fail"><i class="fa-brands fa-space-awesome"></i></span>
         <span id="5" class="fail"><i class="fa-brands fa-space-awesome"></i></span>
+        <span id="box">
+            <div id="portal" class="fadeout"><img alt='portal' src='assets/images/portal.png'></div>
+            <div id="animation" class="fadeout"></div>
+        </span>
     </div>
     <!--The table is prepopulated with results, however any user scores are inputted and sorted into the table on game over-->
     <section id="mainSection">  
@@ -78,7 +82,7 @@
         <form id="name-select" action="https://formdump.codeinstitute.net/" method="post">
             <div id="dificulty">
                 <label for="easy">Easy:</label>
-                <input name="dificulty" id="easy" type="radio" value="easy"checked>
+                <input name="dificulty" id="easy" type="radio" value="easy" checked>
                 <label for="hard">Hard:</label>
                 <input name="dificulty" id="hard" type="radio" value="hard">
             </div>
@@ -92,9 +96,6 @@
 </section>    
     <!--this div contains a the user score. +1 for every matched key.-->
     <div id="counter">0</div>
-    <div id="box">
-        <div id="animation" class="fadeout"><img alt='portal' src='assets/images/portal.png'></div>
-    </div>
     <script src="assets/javascript/script.js"></script>
 </body>
 </html>

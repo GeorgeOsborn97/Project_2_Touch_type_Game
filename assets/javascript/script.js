@@ -22,8 +22,8 @@ function dificultySelect(event){
 }
 let radioSelect = document.getElementById("dificulty");
     radioSelect.addEventListener('click', dificultySelect);
-//ufo animation
 
+//ufo animation
 function ufoEnter(event){
     document.getElementById('hard').disabled = true;
     document.getElementById('easy').disabled = true;
@@ -32,13 +32,15 @@ function ufoEnter(event){
     i++;
     console.log(i);
         let portal = document.getElementById('animation');
-        portal.style.opacity = '0.2';
-        portal.style.transition = '10s';
-        if (i == 10){
+        let portalDelete = document.getElementById('portal');
+        portalDelete.style.opacity = '0';
+        portalDelete.style.transition = '5s';
+        if (i == 5){
+         
         portal.innerHTML = `<img alt='ufo' src='assets/images/ufo-easy.png'>`;
         portal.className = 'fadeIn'
         portal.style.opacity = '1'
-        portal.style.transition = '10s'
+        portal.style.transition = '5s'
         portal.style.scale = '2'
         clearInterval(fade);
         moveUp();
@@ -161,6 +163,10 @@ if(mq.matches) {
 //First function that executes when a username is submitted. It's Purpose is to Remove the Form element, push the inputted name to the array.
 //And create an instructions page with a play button that will begin the game.
 function usernameEntry(event) {
+    let portal = document.getElementById('animation');
+    portal.className = 'fadeOut'
+    portal.style.opacity = '0'
+    portal.style.transition = '5s'
     let form = document.getElementById("name-select");
 //This pushes the counter down so that it is not in contanct with the instructions on mobile devices    
     var mw = window.matchMedia( "(max-width: 360px)" );
@@ -479,4 +485,8 @@ function resetMenu(event) {
           form.addEventListener('submit', usernameEntry);
       let radioSelect = document.getElementById("dificulty");
           radioSelect.addEventListener('click', dificultySelect);
+          let portal = document.getElementById('portal');
+          portal.style.opacity = '1'
+          portal.style.transition = '5s'
+          ufoEnter();
 }

@@ -241,7 +241,7 @@ function startTheGame(event) {
         header.remove();
         let failDiv = document.getElementById('fail-div');
         failDiv.style.paddingTop = '25px';
-        focus();
+        prompt();
     }
     var mw = window.matchMedia( "(max-width: 360px)" );
 // this moves the counter back up after it was moved down in order to not obscure the intructions.    

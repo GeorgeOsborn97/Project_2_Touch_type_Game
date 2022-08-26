@@ -90,6 +90,13 @@ header{
     scale:1.05;
 }
 
+#hidden{
+    height: 0px;
+    width: 1px;
+    margin: 0 auto;
+}
+
+
 /*Ensdure the text inputted follows the style of the site*/
 #username{
     text-transform: uppercase;

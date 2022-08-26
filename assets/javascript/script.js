@@ -177,8 +177,8 @@ function usernameEntry(event) {
     if(mw.matches){
         let counter = document.getElementById('counter');
         counter.style.marginTop = "120px";
-        let hidden = document.getElementById('hidden');
-        hidden.style.marginTop = "100px";
+        let mobilehidden = document.getElementById('hidden');
+        mobilehidden.style.marginTop = "100px";
     }
 
     event.preventDefault();
@@ -258,10 +258,9 @@ function startTheGame(event) {
     if(mw.matches){
         let counter = document.getElementById('counter');
         counter.style.marginTop = "25px";
-        let hidden = document.getElementById('hidden');
-        hidden.style.marginTop = "0px";
-        hidden.hidden = false;
-        hidden.blur();
+        let mobileHidden = document.getElementById('hidden');
+        mobileHidden.style.marginTop = "0px";
+        mobileHidden.hidden = false;
     }
 // re size and move the title as this now shows the randomly generated key.    
     title.style.padding = "80px, 80px, 80px, 80px";

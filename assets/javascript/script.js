@@ -429,9 +429,7 @@ function resetMenu(event) {
             newLogo.setAttribute('id', 'logo');
         let firstDiv = document.getElementById('fail-div');
         let body = document.getElementById('home-page');
-            body.insertBefore(newLogo, firstDiv);
-        let mobileInput = document.getElementById('mobileInput');
-        mobileInput.remove();   
+            body.insertBefore(newLogo, firstDiv); 
     }
     let screen = document.getElementById("menu-game-screen");
         screen.style.backgroundImage = null;

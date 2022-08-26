@@ -3,7 +3,7 @@
 ![full-mockup](assets/readme-images/mockup-images/full-mockup.png)
 "THE TOUCH TYPE GAME" was designed to provide a fun training tool to those wanting to improve their ability to touch type. The Idea was to create a fun, useful, simple yet slightly challenging game that visually would be reminiscent of old arcade games (astroids, space invaders etc...). The game contains two modes to test the skill of the user, the 'easy' mode contains only letters and numbers, 'hard' mode starts to incporporate special characters including those accesed by shift. THE TOUCH TYPE GAME aims to be useful to people of all ages looking to improve their ability to touch type.
 
-Find a link to the deployed site [here](https://georgeosborn97.github.io/Code-Institute-Project1-Beginners-Guide-to-Snowsports/)
+Find a link to the deployed site [here](https://georgeosborn97.github.io/Project_2_Touch_type_Game/)
 
 ## contents:
 1. [User experiance](#user-experiance)

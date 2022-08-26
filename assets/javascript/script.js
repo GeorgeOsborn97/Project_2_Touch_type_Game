@@ -86,13 +86,6 @@ if(mq.matches) {
     function mobileLoad(event){
         alert('Turn Device Portrait. Hard mode is disbaled on mobile devices');
         document.getElementById('hard').disabled = true;
-        let hiddenInput = document.createElement('div');
-        hiddenInput.setAttribute('id', 'hidden');
-        hiddenInput.innerHTML = ` <input id="mobileInput" name="mobileInput" type="text" maxlength="1">`
-        let keyGenerator = document.getElementById('mainSection');
-        keyGenerator.appendChild(hiddenInput);
-        
-    
     }
     document.addEventListener('DOMContentLoaded', mobileLoad);
 
@@ -163,6 +156,11 @@ if(mq.matches) {
         newLeaderboardHard.style.width = '40%';
         newLeaderboardHard.style.position = 'relative';
         newLeaderboardHard.style.float = 'right';
+    let hiddenInput = document.createElement('div');
+        hiddenInput.setAttribute('id', 'hidden');
+        hiddenInput.innerHTML = ` <input id="mobileInput" name="mobileInput" type="text" maxlength="1">`
+    let keyGenerator = document.getElementById('mainSection');
+        keyGenerator.appendChild(hiddenInput);    
 }
 
 //First function that executes when a username is submitted. It's Purpose is to Remove the Form element, push the inputted name to the array.
@@ -432,8 +430,8 @@ function resetMenu(event) {
         let firstDiv = document.getElementById('fail-div');
         let body = document.getElementById('home-page');
             body.insertBefore(newLogo, firstDiv);
-        let mobileInput = document.getElementById('mobileInput')
-        mobileInput.innerHTML = ''    
+        let mobileInput = document.getElementById('mobileInput');
+        mobileInput.remove();   
     }
     let screen = document.getElementById("menu-game-screen");
         screen.style.backgroundImage = null;

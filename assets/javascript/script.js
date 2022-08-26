@@ -86,6 +86,7 @@ if(mq.matches) {
     function mobileLoad(event){
         alert('Turn Device Portrait. Hard mode is disbaled on mobile devices');
         document.getElementById('hard').disabled = true;
+        focus();
     }
     document.addEventListener('DOMContentLoaded', mobileLoad);
 

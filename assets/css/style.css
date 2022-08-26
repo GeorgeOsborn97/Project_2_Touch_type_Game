@@ -236,14 +236,22 @@ input[type='radio']:checked {
     #scoreboard-hard{
         margin-right:5px;
     }
-    @keyframes zoom-effect {
-        from{
-            transform: scale(1);
-        }
-        to{
-            transform: scale(1.01);
-        }
-    }    
+    #image-container{
+        
+        animation-name: zoom-effect-mobile;
+        animation-duration: 10s;
+        animation-fill-mode: forwards;
+        animation-iteration-count: 1;
+
+        @keyframes zoom-effect-mobile {
+            from{
+                transform: scale(1);
+            }
+            to{
+                transform: scale(1.01);
+            }
+        }   
+    }        
 }
 @media screen and (max-width:600px){
     #menu-game-screen{

@@ -160,7 +160,8 @@ if(mq.matches) {
         hiddenInput.setAttribute('id', 'hidden');
         hiddenInput.innerHTML = ` <input id="mobileInput" name="mobileInput" type="text" maxlength="1">`
     let keyGenerator = document.getElementById('mainSection');
-        keyGenerator.appendChild(hiddenInput);    
+        keyGenerator.appendChild(hiddenInput);  
+        document.getElementById('hidden').hidden = true;
 }
 
 //First function that executes when a username is submitted. It's Purpose is to Remove the Form element, push the inputted name to the array.
@@ -172,10 +173,12 @@ function usernameEntry(event) {
     portal.style.transition = '5s';
     let form = document.getElementById("name-select");
 //This pushes the counter down so that it is not in contanct with the instructions on mobile devices    
-    var mw = window.matchMedia( "(max-width: 360px)" );
+    var mw = window.matchMedia( "(max-width: 500px)" );
     if(mw.matches){
         let counter = document.getElementById('counter');
         counter.style.marginTop = "120px";
+        let hidden = document.getElementById('hidden');
+        hidden.style.marginTop = "100px";
     }
 
     event.preventDefault();
@@ -204,7 +207,10 @@ function usernameEntry(event) {
         title.style.color = "white";
         instructions.innerHTML = "After the countdown a random key will be displayed in the circle, you will have 1 second to hit the same key before it changes. A correct click = 1 point, 5 mis-clicks and the game ends. there is a max score of 40 if you make it to the end. Click the Game over screen at the end to play again. Good Luck!";
         instructions.style.color = "white";
-    
+        var mq = window.matchMedia( "(max-width: 800px)" );
+        if(mq.matches) {
+            instructions.innerHTML = "After the countdown select the text box aboce the score counter. A random key will be displayed in the circle, you will have 1 second to hit the same key before it changes. A correct click = 1 point, 5 mis-clicks and the game ends. there is a max score of 40 if you make it to the end. Click the Game over screen at the end to play again. Good Luck!";
+        }    
     let screen = document.getElementById("menu-game-screen");
         screen.appendChild(title);
         screen.appendChild(instructions);
@@ -247,11 +253,15 @@ function startTheGame(event) {
         let failDiv = document.getElementById('fail-div');
         failDiv.style.paddingTop = '25px';
     }
-    var mw = window.matchMedia( "(max-width: 360px)" );
+    var mw = window.matchMedia( "(max-width: 500px)" );
 // this moves the counter back up after it was moved down in order to not obscure the intructions.    
     if(mw.matches){
         let counter = document.getElementById('counter');
-        counter.style.marginTop = "10px";
+        counter.style.marginTop = "25px";
+        let hidden = document.getElementById('hidden');
+        hidden.style.marginTop = "0px";
+        hidden.hidden = false;
+        hidden.blur();
     }
 // re size and move the title as this now shows the randomly generated key.    
     title.style.padding = "80px, 80px, 80px, 80px";

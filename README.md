@@ -1,4 +1,4 @@
-# Your Snowsports Guide
+# THE TOUCH TYPE GAME
 
 ![full-mockup](assets/readme-images/mockup-images/full-mockup.png)
 "THE TOUCH TYPE GAME" was designed to provide a fun training tool to those wanting to improve their ability to touch type. The Idea was to create a fun, useful, simple yet slightly challenging game that visually would be reminiscent of old arcade games (astroids, space invaders etc...). The game contains two modes to test the skill of the user, the 'easy' mode contains only letters and numbers, 'hard' mode starts to incporporate special characters including those accesed by shift. THE TOUCH TYPE GAME aims to be useful to people of all ages looking to improve their ability to touch type.
@@ -119,7 +119,7 @@ ___
 * [GitPod](https://gitpod.io/)
 * [font awesome](https://fontawesome.com/)
 * [google fonts](https://fonts.google.com/)
-* [balsimq](https://uizard.com/)
+* [balsimq](https://balsamiq.com/)
 * [amiresponsive](https://ui.dev/amiresponsive)
 * Chrome devtools
 * Google images
@@ -144,30 +144,28 @@ In order to test responisve elements throughout the development process Chrome D
 ![index page mobile results](assets/readme-images/page1-mobile-results.png)
 ### Manual Testing:
 #### Feature Testing:
-* Background images: 
-   - To make sure the CSS providing the images worked correctly the previewed site cache was constantly refreshed. 
-   - In order to ensure that all the background images correctly showed on all devices Chrome dev tools was used to simulate different devices.
-* Font awesome icons:
-   - The icons I have selected to show from Font awesome all are cleaerly present when the site is loaded.
-   - The icons linked to the clapsable text held within the fieldset change from a person skiing to a burst when open. All clapsable text was opened and closed to ensure this was present across all clapsable text.
-   - Safari/IOS does not show these changing font awesome icons. I believe this is a issue with IOS as this feature has been tested on mutiple other devices and works as designed.
-* Hover effects:
-   - When the curser is moved over the nav icon and the claspable text they turn white and blue respectively. 
-   - When the navigation items in the nav menu are hovered over they appear underlined.
-   - When the clapsable text, brand icons, social links and submit/refresh buttons are hovered over they increase by a scale of 1.01, 1.05, 1.2 and 1.5 respectively.
-* clapsable text:
-   - The clapsable text stays open after one click and will claspe again after a second click.   
-* Video:
-  - The video does not autoplay when the page is loaded.
-  - when the video is clicked the video plays, it can be paused, started again and can enter and exit full screen.
-* Map:
-  - The map can be zoomed in and out, the highlighted pins can be selected on PC, and a the map can be enlarged to take the user to Googlemaps. 
-  - On mobile when the map is selected Google maps is opened instantly.
-* Ask us:
-  - If no information any information is not entererd the form will not submit.    
-* Internal and External links:
-  - All external links open in a new tab.
-  - All Internal links take the user to the correct page.
+* Background image: 
+  
+* Users name input:
+ 
+* Difficulty selector:
+  
+* The removal of the form on submit :
+   
+* Creation of the title and instructions on submit:
+ 
+* The countdown starts on play:
+
+* The main game owrks as planned:
+  
+* The key tracking works for correct clicks and wrong clicks:
+
+* Gameover is produced after 40 keys or 5 misclicks:
+* Remake the form on reset:
+* Addition of users name and score to the relevent table:
+* Table change on mobile:
+* Removal of title whilst playing on mobile:
+* UFO fades in and out as required.:  
 #### Device testing:
 This site has been physically tested on:
    - ASUS ZenBook
@@ -198,14 +196,12 @@ In order to deploy our site from GitHub to Github pages the stages are as follow
 ___
 ## credits/acknowledgments
 ### Content:
-- All code was written by myself no external code was copied in this webpage. However stackoverflow was used regulary in order to gain a better understanding of how certain elements interact and best practices for implementation. As well as Dilshan Kelsen who helped me to style the arrow in a summary element his site and the specific page can be found [here](https://dilshankelsen.com/style-arrow-of-html-accordion/)
+- All code was written by myself no external code was copied in this webpage. However stackoverflow was used regulary in order to gain a better understanding of how certain elements interact and best practices for implementation. As well as w3Schools which provided base code for the movement of teh 'ufo' amd the sorting of the table. Both these codes were modified by me to suit my needs. The two base codes can be found here for the ufo movement and the table sort: [Table](https://www.w3schools.com/howto/howto_js_sort_table.asp) [ufo](https://www.w3schools.com/js/js_htmldom_animate.asp)
 - All icons are from [Font awesome](https://fontawesome.com/icons)
-- the font used was imported from Google fonts and created by Cadson Demak @ Principal design it can be viewed [here](https://fonts.google.com/specimen/Kanit?preview.text=Your%20Snowsports%20Guide&preview.text_type=custom#standard-styles)
+- the font used was imported from Google fonts and created by Jason Kottke it can be viewed [here](https://fonts.google.com/specimen/Silkscreen?query=silk)
 
 ### Media:
 - All images used in this site were taken from Google Images.
-- All credit for the Video in the home page goes to "The Bag o' Tricks" link to his page can be found [here](https://www.youtube.com/channel/UCaEXnwWYRc5ph2QqQQviWlA)
-- Google maps was used for the Map on "getting Started"
-- The Mock up and wireframes were created using both [amiresponsive](https://ui.dev/amiresponsive) and [Uizard](https://uizard.io/) respectivly.
+- The Mock up and wireframes were created using both [amiresponsive](https://ui.dev/amiresponsive) and [Balsamiq](https://balsamiq.com/) respectivly.
 ___
 ## Final thoughts.

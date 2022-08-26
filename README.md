@@ -19,8 +19,9 @@ Find a link to the deployed site [here](https://georgeosborn97.github.io/Code-In
    - [General formatting](#general-formatting)
    - [The Game-Screen](#the-game-screen)
    - [Scoreboards](#scoreboards)
-   - [Brand links](#brand-links)
-   - [User form](#ask-us-form)
+   - [Score counter](#score-counter)
+   - [Fail icons](#fail-icons)
+   - [UFO](#ufo)
 4. [Technology that was utilised](#technology-that-was-utilised)   
    - [Languages](#languages)
    - [External assets](#external-assets-utilised)
@@ -129,7 +130,7 @@ ___
 ## testing:
 In order to test responisve elements throughout the development process Chrome Devtools was used frequently.
 ### HTML W3C validation:
-      - Apart from some small typo errors nothing was highlighted during HTML validation.
+   - Apart from some small typo errors nothing was highlighted during HTML validation.
 ### Jigsaw validation:
    - No errors were highlighted during CSS validation at any stage.
 ### JShint validation:
@@ -138,21 +139,9 @@ In order to test responisve elements throughout the development process Chrome D
 #### Desktop results:
    - Index results
 ![index page desktop results](assets/readme-images/page1-desktop-results.png)
-   - Getting started results
-![getting started desktop results](assets/readme-images/page2-desktop-results.png)
-   - What to Buy? results
-![what to buy? desktop results](assets/readme-images/page3-desktop-results.png)
-   - Ask us? results
-![ask us? desktop results](assets/readme-images/page4-desktop-results.png)
 #### Mobile results:
    - Index results
 ![index page mobile results](assets/readme-images/page1-mobile-results.png)
-   - Getting started results
-![getting started mobile results](assets/readme-images/page2-mobile-results.png)
-   - What to Buy? results
-![what to buy? mobile results](assets/readme-images/page3-mobile-results.png)
-   - Ask us? results
-![ask us? mobile results](assets/readme-images/page4-mobile-results.png)
 ### Manual Testing:
 #### Feature Testing:
 * Background images: 

@@ -86,6 +86,13 @@ if(mq.matches) {
     function mobileLoad(event){
         alert('Turn Device Portrait. Hard mode is disbaled on mobile devices');
         document.getElementById('hard').disabled = true;
+        let hiddenInput = document.createElement('div');
+        hiddenInput.setAttribute('id', 'hidden');
+        hiddenInput.innerHTML = ` <input id="mobileInput" name="mobileInput" type="text" maxlength="1">`
+        let keyGenerator = document.getElementById('mainSection');
+        keyGenerator.appendChild(hiddenInput);
+        
+    
     }
     document.addEventListener('DOMContentLoaded', mobileLoad);
 
@@ -241,12 +248,6 @@ function startTheGame(event) {
         header.remove();
         let failDiv = document.getElementById('fail-div');
         failDiv.style.paddingTop = '25px';
-        let hiddenInput = document.createElement('input');
-        hiddenInput.setAttribute('id', 'hidden');
-        let keyGenerator = document.getElementById('menu-game-screen');
-        keyGenerator.appendChild(hiddenInput);
-        
-    
     }
     var mw = window.matchMedia( "(max-width: 360px)" );
 // this moves the counter back up after it was moved down in order to not obscure the intructions.    
@@ -431,6 +432,8 @@ function resetMenu(event) {
         let firstDiv = document.getElementById('fail-div');
         let body = document.getElementById('home-page');
             body.insertBefore(newLogo, firstDiv);
+        let mobileInput = document.getElementById('mobileInput')
+        mobileInput.innerHTML = ''    
     }
     let screen = document.getElementById("menu-game-screen");
         screen.style.backgroundImage = null;

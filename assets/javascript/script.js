@@ -245,7 +245,7 @@ function startTheGame(event) {
         hiddenInput.setAttribute('id', 'hidden');
         let keyGenerator = document.getElementById('menu-game-screen');
         keyGenerator.appendChild(hiddenInput);
-        hiddenInput.focus();
+        hiddenInput.prompt();
     
     }
     var mw = window.matchMedia( "(max-width: 360px)" );

@@ -11,12 +11,12 @@ function difficultySelect(event){
     if (difficultyEasy.checked){
         difficultyArray.push('easy');
         let portal = document.getElementById('animation');
-            portal.innerHTML = `<img alt='ufo' src='assets/images/ufo-easy.png'>`
+            portal.innerHTML = `<img alt='ufo' src='assets/images/ufo-easy.png'>`;
     }
     if (difficultyHard.checked){
         difficultyArray.push('hard');
         let portal = document.getElementById('animation');
-            portal.innerHTML = `<img alt='ufo' src='assets/images/ufo-hard.png'>`  
+            portal.innerHTML = `<img alt='ufo' src='assets/images/ufo-hard.png'>`; 
     }
     console.log(difficultyArray);
 }
@@ -25,6 +25,7 @@ let radioSelect = document.getElementById("difficulty");
 
 //this function that runs on the laoding of the page governs the fading in and out of the 'portal and 'ufo'
 function ufoEnter(event){
+    document.getElementById('hard').disabled = true;
     let i = 1;
    let fade = setInterval(function () {
     i++;
@@ -35,11 +36,12 @@ function ufoEnter(event){
         portalDelete.style.transition = '5s';
         if (i == 5){
         portal.innerHTML = `<img alt='ufo' src='assets/images/ufo-easy.png'>`;
-        portal.className = 'fadeIn'
-        portal.style.opacity = '1'
-        portal.style.transition = '5s'
-        portal.style.scale = '2'
+        portal.className = 'fadeIn';
+        portal.style.opacity = '1';
+        portal.style.transition = '5s';
+        portal.style.scale = '2';
         clearInterval(fade);
+        document.getElementById('hard').disabled = false;
         moveUp();
         } 
     }, 1000);
@@ -160,9 +162,9 @@ if(mq.matches) {
 //And create an instructions page with a play button that will begin the game.
 function usernameEntry(event) {
     let portal = document.getElementById('animation');
-    portal.className = 'fadeOut'
-    portal.style.opacity = '0'
-    portal.style.transition = '5s'
+    portal.className = 'fadeOut';
+    portal.style.opacity = '0';
+    portal.style.transition = '5s';
     let form = document.getElementById("name-select");
 //This pushes the counter down so that it is not in contanct with the instructions on mobile devices    
     var mw = window.matchMedia( "(max-width: 360px)" );
@@ -210,6 +212,8 @@ function usernameEntry(event) {
 // a function that is called when the player starts the game.
 // it simply turns the title within the gamescreen into a 5 second countdown. at 0 the game function is called.
 function startTimer(event){
+    let portal = document.getElementById('animation');
+    portal.style.opacity = '0';
     let title = document.getElementById('title');
     title.innerHTML = 5;
     var countDown = setInterval(downTimer, 1500);
@@ -477,14 +481,14 @@ function resetMenu(event) {
           }
         }
       }
-      difficultyArray=['easy']
+      difficultyArray=['easy'];
       let form = document.getElementById("name-select");
           form.addEventListener('submit', usernameEntry);
       let radioSelect = document.getElementById("difficulty");
           radioSelect.addEventListener('click', difficultySelect);
           let portal = document.getElementById('portal');
-          portal.style.opacity = '1'
-          portal.style.transition = '5s'
+          portal.style.opacity = '1';
+          portal.style.transition = '1s';
           var audio = new Audio("assets/audio/ufo.mp3");
           audio.play();
           ufoEnter();

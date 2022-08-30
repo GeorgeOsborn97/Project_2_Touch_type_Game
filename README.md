@@ -223,11 +223,11 @@ In order to test responisve elements throughout the development process Chrome D
    - How it was tested? The game was played on mobile devices.
    - What was the outcome? The title does get removed during play on mobiles and is remade on the resetting of the intial conditions.
    - Fixes? None required.
-* An input is created on mobile during the agem:
+* An input is created on mobile during the game:
    - What was expected? When the game is played on mobile devices an input is created inbetween the counter and game screen
    - How it was tested? The game was played on mobile devices.
    - What was the outcome? The input was created on mobile devices when the agme starts.
-   - Fixes? The input was made in order to force open a mobile keyboard. However there is one issue with this fix in that the screen zooms in on the input when its selected. The user is then required to zoom back out or scroll up to see the keys to be pressed. As of this moment i can not find a fix for this. 
+   - Fixes? The input was made in order to force open a mobile keyboard. However there is one issue with this fix in that the screen zooms in on the input when its selected. The user is then required to zoom back out or scroll up to see the keys to be pressed. I have put in a maximum-scale into the viewport meta, this has stopped the zooming effect.
 * UFO fades in and out as required:
    - What was expected? On the loading of the site a portal image fades out as a UFO fades in and scales up. When the form is submitted the ufo fades out. When the inital conditions are recreated the UFo fades back in. The UFO acts as a way to inform the user the differences between the modes by chnaging depnding on which mode is selected.
    - How it was tested? The game was loaded and played through on multiple devices. The two modes were both selected on various occasions.

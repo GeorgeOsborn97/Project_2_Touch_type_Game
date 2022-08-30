@@ -28,6 +28,7 @@ Find a link to the deployed site [here](https://georgeosborn97.github.io/Project
 5. [Testing](#testing)  
    - [HTML W3C Validation](#html-w3c-validation)
    - [CSS Jigsaw validation](#jigsaw-validation)
+   - [JShint Validation](#jshint-validation)
    - [Lighthouse](#lighthouse)
    - [Desktop results](#desktop-results)
    - [Mobile results](#mobile-results)
@@ -75,8 +76,7 @@ ___
 ### The background and imagary:
    - the background image aims to provides a fitting general setting for the site, whilst not distracting from the elements the user will have the most interaction with.
    - The background slowly zooms in as to give the site a sense of life. The speed of this effect was considered heavily as it could not distract the user from the game whilst they are playing.
-   - The pixilated text, space theme of the background and icons were specifically choosen to provide a sense of nostalgia. They aim to be reminiscent of games such as space invaders and astroids. 
-![what the user first sees](assets/readme-images/opening-main-img.png)   
+   - The pixilated text, space theme of the background and icons were specifically choosen to provide a sense of nostalgia. They aim to be reminiscent of games such as space invaders and astroids.   
 ### The audio: 
    - There is a background piece of music that beigns after the user has submitted their name and difficulty. It follows the classic sci-fi game theme of the site and aims to begin to immerse the user.
    - Different sound effects are utilised throughout, the key ones are the 'fail' sound and 'correct' sound. These are present to give an audible que within the game, but also to provide a bit of tension to the game.
@@ -95,17 +95,20 @@ ___
 ![The game screen](assets/images/readme-images/game-screen.png)   
 ### Scoreboards:
    - There are two scoreboards to represent the different modes, easy and hard. The users name and score is logged to the relevent board on completion of the game and is then sorted into numerical order, highest to lowest.
-![social links](assets/readme-images/social-footer.png)   
+![easy scoreboard](assets/images/readme-images/easy-scoreboard.png)
+![hard scoreboard](assets/images/readme-images/hard-scoreboard.png)     
 ### Score counter:
    - The counter that sits under the game-screen simply tacks the users score. For every succesful click the counter increases by one. When the game ends the counter stops tracking the users key presses.
-![links to external brands](assets/readme-images/retail-links.png)   
+![Counter](assets/images/readme-images/counter.png)   
 ### Fail icons:
    - At the top of the page are 5 green spaceships. These icons were chosen specifically to match the theme of the game.
    - On a misclick the icons turn red, loose their border and become 'explosions'. If all 5 turn red the game ends. This feature aims to create a sense of urgency within the user and give the game as a whole a sense of drama.
+   ![Fail icons](assets/images/readme-images/fail-icons.png)
 ### UFO:
    - The UFO is an attempt at a creative way to set forward a small bit of key information.
    - The goal of this was to first of all set out the differences between the two modes and secondly to provide a striking opening image/effect that would grab the user as they enter the site.
-![user form](assets/readme-images/user-form.png)   
+![Portal](assets/images/readme-images/portal-image.png)
+![UFO](assets/images/readme-images/ufo-image.png)   
 ___
 ## Technology that was utilised:
 ### languages:
@@ -119,6 +122,7 @@ ___
 * [google fonts](https://fonts.google.com/)
 * [balsimq](https://balsamiq.com/)
 * [amiresponsive](https://ui.dev/amiresponsive)
+* [Pixilart](https://www.pixilart.com/draw?gclid=CjwKCAjw6raYBhB7EiwABge5Kr74ckPbOVND42OxyLYGYqnew4wkdbgsyGKaYj_KRU4xmjfZM03gExoCQHAQAvD_BwE)
 * Chrome devtools
 * Google images
 * [W3C HTML validator](https://validator.w3.org/)
@@ -136,10 +140,10 @@ In order to test responisve elements throughout the development process Chrome D
 ### Lighthouse:
 #### Desktop results:
    - Index results
-![index page desktop results](assets/readme-images/page1-desktop-results.png)
+![index page desktop results](assets/images/readme-images/desktop-results.png)
 #### Mobile results:
    - Index results
-![index page mobile results](assets/readme-images/page1-mobile-results.png)
+![index page mobile results](assets/images/readme-images/mobile-results.png)
 ### Manual Testing:
 #### Feature Testing:
 * Background image: 
@@ -239,18 +243,9 @@ This site has been physically tested on:
    - ASUS ZenBook
    - Iphone X
    - Samsung Galaxy S20
-After the initial deployment these are the bugs that need addressing:
-   1. Brand logos not showing on either desktop or mobile.
-      - This bug was due to an error in the pathway to the images, with that clear the images loaded fine
-   2. Icons for clapsable text are the default arrows on mobile
-      - This issue appears to only be a problem for IOS, the icons load fine on Android. Issue still needs addressing on IOS
-   3. On mobile the nav bar icon is now present when it should not be.
-      - This issue is also only on IOS and still requires a fix.
-   4. on mobile when the nav bar is selected a blue border is visible.
-      - This is also an IOS issue that requires a fix. 
-      - This was fixed by applying an "outline:none !important" to the all summary elements.
-   5. when the page is loaded on mobile the screen width is ok, however if you attempt to zoom out or scroll to the right, the image stops abrubtly and a margin with the background colour is visible on the right.
-      - This issue was due to the width of the h1 element, the width was set to 90vw and this appears to of solved this problem.
+After the initial deployment these are the bugs that needed addressing:
+   1. The UFO was loading off screen on mobile. This was solved by floating the box div over to the left and reducing it to 1px by 1px.
+   2. There was an oversight as I did not initially think of how I was going to open the keyboard on mobile. There was many attempts at ways to force open the keyboard but they did work unfortunatly. In the end the fix for this was to create an input that the user could interactive with to open the keyboard on mobile.
    ___
 ## deployment:
 All code was written in Gitpod, pushed to GitHub and deployed to GitHub Pages.
@@ -269,7 +264,8 @@ ___
 - the font used was imported from Google fonts and created by Jason Kottke it can be viewed [here](https://fonts.google.com/specimen/Silkscreen?query=silk)
 
 ### Media:
-- All images used in this site were taken from Google Images.
+- The background image and two gameover images used in this site were taken from Google Images.
+- The buttons, 'UFO' and Portal were created by me using [Pixilart](https://www.pixilart.com/draw?gclid=CjwKCAjw6raYBhB7EiwABge5Kr74ckPbOVND42OxyLYGYqnew4wkdbgsyGKaYj_KRU4xmjfZM03gExoCQHAQAvD_BwE)
 - The Mock up and wireframes were created using both [amiresponsive](https://ui.dev/amiresponsive) and [Balsamiq](https://balsamiq.com/) respectivly.
 ___
 ## Final thoughts.

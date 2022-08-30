@@ -146,6 +146,7 @@ In order to test responisve elements throughout the development process Chrome D
 ![index page mobile results](assets/images/readme-images/mobile-results.png)
 ### Manual Testing:
 #### Feature Testing:
+* Fixes refers to any potentail current fixes/improvements that are still potentailly available. 'None required' refers to the fact that at this moment there is no additional work needed to improve that feature. Many bugs and errors were encounted during the devolpment process and several of these features were very much trail and error. The accounts of which can be found throughout the commits in GitHub.
 * Background image: 
    - What was expected? The background image should be undistracting, in focus and on desktop the image should slowly zoom in for a period of 5 minutes before restting.
    - How it was tested? The site was given to a number of people to gauge their reactions, none of them stated that they were distracted by the background whilst playing the game. The zoom effect was also watched to completion to ensure that it did reset after 5 minutes.

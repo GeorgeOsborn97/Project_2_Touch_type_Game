@@ -236,6 +236,12 @@ input[type='radio']:checked {
     #scoreboard-hard{
         margin-right:5px;
     }
+    #box{
+        float:left;
+        width:1px;
+        height:1px;
+        margin:0;
+    }
     #image-container{
         
         animation-name: zoom-effect-mobile;

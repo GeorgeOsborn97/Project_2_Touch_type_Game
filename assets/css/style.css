@@ -243,7 +243,6 @@ input[type='radio']:checked {
         margin:0;
     }
     #image-container{
-        
         animation-name: zoom-effect-mobile;
         animation-duration: 10s;
         animation-fill-mode: forwards;

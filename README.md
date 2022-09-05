@@ -63,14 +63,22 @@ Initial | ![desktop mockup of what the user see's when the game opens](assets/im
 Whilst playing | ![desktop mock up of page 2 "getting strated"](assets/images/readme-images/wireFrameSecond.png) |
 ___
 ## Final Product
-### Before Submission
-![Final image of the top of the Index page on opening](assets/readme-images/final-images/final-image-page1-top.png)
-### After Submission
-![Final image of the top of the Index page after submission](assets/readme-images/final-images/final-image-page1-bottom.png)
-### Whilst Playing
-![Final image of the top of the index page whilst playing](assets/readme-images/final-images/final-image-page2-top.png)
-### After Playing
-![Final image of the top of the homeIndex page after playing](assets/readme-images/final-images/final-image-page2-bottom.png)
+### Before Submission (Desktop)
+![Final image of the Index page on opening (desktop)](assets/images/readme-images/final-image-1.png)
+### After Submission (Desktop)
+![Final image of the Index page after submission (desktop)](assets/images/readme-images/final-image-2.png)
+### Whilst Playing (Desktop)
+![Final image of the index page whilst playing (desktop)](assets/images/readme-images/final-image-3.png)
+### After Playing (Desktop)
+![Final image of the Index page after playing (desktop)](assets/images/readme-images/final-image-4.png)
+### Before Submission (Mobile)
+![Final image of the Index page on opening (mobile)](assets/images/readme-images/final-mobile-1.png)
+### After Submission (Mobile)
+![Final image of the Index page after submission (mobile)](assets/images/readme-images/final-mobile-2.png)
+### Whilst Playing (Mobile)
+![Final image of the index page whilst playing (mobile)](assets/images/readme-images/final-mobile-3.png)
+### After Playing (Mobile)
+![Final image of the Index page after playing (mobile)](assets/images/readme-images/final-mobile-4.png)
 ___
 ## Features: 
 ### The background and imagary:
@@ -107,6 +115,7 @@ ___
 ### UFO:
    - The UFO is an attempt at a creative way to set forward a small bit of key information.
    - The goal of this was to first of all set out the differences between the two modes and secondly to provide a striking opening image/effect that would grab the user as they enter the site.
+   - Although the colours of yellow and white do contrast slightly (the ufo and the leaderboard) the UFO disapears on the submission of the name in order to keep all the elements clear.
 ![Portal](assets/images/readme-images/portal-image.png)
 ![UFO](assets/images/readme-images/ufo-image.png)   
 ___
@@ -174,7 +183,7 @@ In order to test responisve elements throughout the development process Chrome D
    - What was the outcome? The correct difficulty was pushed to the array, the correct keys were shown during the game and the hard mode was not accessable on mobile devices.
    - Fixes? None required.
 * The removal of the form on submit:
-   - What was expected? After the user has interacted with the submit button the form is removed and replaced with a h1 and a p element that display the instructions of how to play the game. and a new button to start the game.
+   - What was expected? After the user has interacted with the submit button the form is removed and replaced with a h1 and a p element that display the instructions of how to play the game and a new button to start the game.
    - How it was tested? The submit button was clicked.
    - What was the outcome? The form was removed and all the new elements were added correctly with the correct styling.
    - Fixes? None required.
@@ -233,7 +242,7 @@ In order to test responisve elements throughout the development process Chrome D
    - What was expected? On the loading of the site a portal image fades out as a UFO fades in and scales up. When the form is submitted the ufo fades out. When the inital conditions are recreated the UFo fades back in. The UFO acts as a way to inform the user the differences between the modes by chnaging depnding on which mode is selected.
    - How it was tested? The game was loaded and played through on multiple devices. The two modes were both selected on various occasions.
    - What was the outcome? The UFO does fade in and out as required and shows the relevent information depending on which mode is selected.
-   - Fixes? .......................
+   - Fixes? A lot of work went into creating this effect, a lot of trial of error for the many issues that were encountered through out the development all of which can be seen in the commits.
 * All hover effects.
    - What was expected? When the curser is moved over the start button, play button and game over screen the images are scaled up. When the curser moves out they scale backdown.
    - How it was tested? The curser was moved in and out of all three of these elements.
@@ -244,6 +253,7 @@ This site has been physically tested on:
    - ASUS ZenBook
    - Iphone X
    - Samsung Galaxy S20
+
 After the initial deployment these are the bugs that needed addressing:
    1. The UFO was loading off screen on mobile. This was solved by floating the box div over to the left and reducing it to 1px by 1px.
    2. There was an oversight as I did not initially think of how I was going to open the keyboard on mobile. There was many attempts at ways to force open the keyboard but they did work unfortunatly. In the end the fix for this was to create an input that the user could interactive with to open the keyboard on mobile.
@@ -269,4 +279,7 @@ ___
 - The buttons, 'UFO' and Portal were created by me using [Pixilart](https://www.pixilart.com/draw?gclid=CjwKCAjw6raYBhB7EiwABge5Kr74ckPbOVND42OxyLYGYqnew4wkdbgsyGKaYj_KRU4xmjfZM03gExoCQHAQAvD_BwE)
 - The Mock up and wireframes were created using both [amiresponsive](https://ui.dev/amiresponsive) and [Balsamiq](https://balsamiq.com/) respectivly.
 ___
-## Final thoughts.
+## Final thoughts
+This was an extreamly challenging project to take on, however it is one I am very proud of.
+A big thank you to Marcel my mentor Marcel and the whole Code Institute team for their amazing support.
+I hope you enjoy my game.

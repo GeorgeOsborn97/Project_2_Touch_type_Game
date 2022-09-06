@@ -100,6 +100,7 @@ ___
    - When the play button is clicked the title turns into a five second countdown, after which the instructions are removed, the title is blown up and is replaced by a random key that the user needs to match to gain a point.
    - After the game the screen changes again to a winner or looser screen.
    - If the user clicks on the screen one final time their initially inputted name and their score is logged to the relevant table, and the original form is recreated.
+   - A feature of the game screen that appears only on mobile is that an input appears once the game has begun. Although this was not my ideal scenario I could not find another way to generate the keyboard for the user on a mobile device. All my previous attempts to solve this issue can be found in the commits. This is an area that I would like to return to in the future as my skills develop further.
 ![The game screen](assets/images/readme-images/game-screen.png)   
 ### Scoreboards:
    - There are two scoreboards to represent the different modes, easy and hard. The users name and score is logged to the relevant board on completion of the game and is then sorted into numerical order, highest to lowest.
@@ -219,14 +220,14 @@ In order to test responsive elements throughout the development process Chrome D
    - What was the outcome? All of the changes required occur without incident. The form is recreated and the counters are all reset. 
    - Fixes? None required.
 * Addition of users name and score to the relevent table:
-   - What was expected? when the game ends the name the user inputted and their score is added to the table relevent to the difficulty they selected.
-   - How it was tested? The game was played through multiple times on bith difficulties.
+   - What was expected? when the game ends the name the user inputted and their score is added to the table relative to the difficulty they selected.
+   - How it was tested? The game was played through multiple times on both difficulties.
    - What was the outcome? When the game ends the users name and score are both added to the relevent table.
-   - Fixes? none required.
+   - Fixes? None required.
 * Table change on mobile:
    - What was expected? When the site is loaded on mobile the tables are remade in index.html to better fit the smaller screen.
    - How it was tested? the site was simulated on mobiles using chrome dev tools.
-   - What was the outcome? The tables are remade underneith the game screen when the site is loaded on mobiles.
+   - What was the outcome? The tables are remade underneath the game screen when the site is loaded on mobiles.
    - Fixes? None required.
 * Removal of title whilst playing on mobile:
    - What was expected? When the countdown reaches 0 and the game starts the title of the site is removed on mobile devices.
@@ -237,12 +238,12 @@ In order to test responsive elements throughout the development process Chrome D
    - What was expected? When the game is played on mobile devices an input is created inbetween the counter and game screen
    - How it was tested? The game was played on mobile devices.
    - What was the outcome? The input was created on mobile devices when the agme starts.
-   - Fixes? The input was made in order to force open a mobile keyboard. However there is one issue with this fix in that the screen zooms in on the input when its selected. The user is then required to zoom back out or scroll up to see the keys to be pressed. I have put in a maximum-scale into the viewport meta, this has stopped the zooming effect.
+   - Fixes? None required.
 * UFO fades in and out as required:
-   - What was expected? On the loading of the site a portal image fades out as a UFO fades in and scales up. When the form is submitted the ufo fades out. When the inital conditions are recreated the UFo fades back in. The UFO acts as a way to inform the user the differences between the modes by chnaging depnding on which mode is selected.
+   - What was expected? On the loading of the site a portal image fades out as a UFO fades in and scales up. When the form is submitted the ufo fades out. When the inital conditions are recreated the UFO fades back in. The UFO acts as a way to inform the user the differences between the modes by chnaging depnding on which mode is selected.
    - How it was tested? The game was loaded and played through on multiple devices. The two modes were both selected on various occasions.
    - What was the outcome? The UFO does fade in and out as required and shows the relevent information depending on which mode is selected.
-   - Fixes? A lot of work went into creating this effect, a lot of trial of error for the many issues that were encountered through out the development all of which can be seen in the commits.
+   - Fixes? A lot of work went into creating this effect, a lot of trial of error for the many issues that were encountered through out the development, all of which can be seen in the commits.
 * All hover effects.
    - What was expected? When the curser is moved over the start button, play button and game over screen the images are scaled up. When the curser moves out they scale backdown.
    - How it was tested? The curser was moved in and out of all three of these elements.
@@ -257,6 +258,7 @@ This site has been physically tested on:
 After the initial deployment these are the bugs that needed addressing:
    1. The UFO was loading off screen on mobile. This was solved by floating the box div over to the left and reducing it to 1px by 1px.
    2. There was an oversight as I did not initially think of how I was going to open the keyboard on mobile. There was many attempts at ways to force open the keyboard but they did work unfortunatly. In the end the fix for this was to create an input that the user could interactive with to open the keyboard on mobile.
+   3. The input that was made in order to force open a mobile keyboard had one big issue. The screen zoomed in on the input when it was selected. The user was then required to zoom back out or scroll up to see the keys to be pressed. I have since put in a maximum-scale into the viewport meta, this has stopped the zooming effect.
    ___
 ## deployment:
 All code was written in Gitpod, pushed to GitHub and deployed to GitHub Pages.
@@ -270,7 +272,7 @@ In order to deploy our site from GitHub to Github pages the stages are as follow
 ___
 ## credits/acknowledgments
 ### Content:
-- All code was written by myself no external code was copied in this webpage. However stackoverflow was used regulary in order to gain a better understanding of how certain elements interact and best practices for implementation. As well as w3Schools which provided base code for the movement of teh 'ufo' amd the sorting of the table. Both these codes were modified by me to suit my needs. The two base codes can be found here for the ufo movement and the table sort: [Table](https://www.w3schools.com/howto/howto_js_sort_table.asp) [ufo](https://www.w3schools.com/js/js_htmldom_animate.asp)
+- The vast majority of the code was written by myself with the exception of two instances where external code was copied in to this webpage however these were modified slightyly to fit my sepcific needs. Stackoverflow and was used regulary in order to gain a better understanding of how certain elements interact and best practices for implementation. As well as w3Schools which provided base code for the movement of the 'ufo' and the sorting of the table. Both these codes were modified by me to suit my needs. The two base codes can be found here for the ufo movement and the table sort: [Table](https://www.w3schools.com/howto/howto_js_sort_table.asp) [ufo](https://www.w3schools.com/js/js_htmldom_animate.asp)
 - All icons are from [Font awesome](https://fontawesome.com/icons)
 - the font used was imported from Google fonts and created by Jason Kottke it can be viewed [here](https://fonts.google.com/specimen/Silkscreen?query=silk)
 

@@ -282,6 +282,7 @@ ___
 - The Mock up and wireframes were created using both [amiresponsive](https://ui.dev/amiresponsive) and [Balsamiq](https://balsamiq.com/) respectivly.
 ___
 ## Final thoughts
+Message for the assessor; LO2 2.4 says 'all external links open to a seporate tab.' I just wanted to leave a note to explain that I purposly made the decision to exclude any would be links as I didnt feel like they would match the aesthetic of the site and I didn't want to include them for including thems sake. 
 This was an extreamly challenging project to take on, however it is one I am very proud of.
 A big thank you to Marcel my mentor Marcel and the whole Code Institute team for their amazing support.
 I hope you enjoy my game.

@@ -18,7 +18,6 @@ function difficultySelect(event){
         let portal = document.getElementById('animation');
             portal.innerHTML = `<img alt='ufo' src='assets/images/ufo-hard.png'>`; 
     }
-    console.log(difficultyArray);
 }
 let radioSelect = document.getElementById("difficulty");
     radioSelect.addEventListener('click', difficultySelect);
@@ -29,7 +28,6 @@ function ufoEnter(event){
     let i = 1;
    let fade = setInterval(function () {
     i++;
-    console.log(i);
         let portal = document.getElementById('animation');
         let portalDelete = document.getElementById('portal');
         portalDelete.style.opacity = '0';
@@ -53,7 +51,6 @@ document.addEventListener('DOMContentLoaded', ufoEnter)
 // the original cvan be foud here: https://www.w3schools.com/js/js_htmldom_animate.asp
 function moveUp() {
     let y = document.getElementById("box")
-    console.log(y.clientHeight)
         let id = null;
         const elem = document.getElementById("animation");  
         let pos = 0;
@@ -233,7 +230,6 @@ function startTimer(event){
         var audio = new Audio("assets/audio/countDown.mp3");
             audio.play();
         if(title.innerHTML == 0){
-            console.log('game starts');
             clearInterval(countDown);
             var audio = new Audio("assets/audio/start.mp3");
             audio.play();
@@ -267,12 +263,10 @@ function startTheGame(event) {
     title.style.fontSize = "120px";
     title.innerHTML = "GO!";
     let x = difficultyArray.push() - 1;
-        console.log(difficultyArray[x]);
 //This function produces the random key and chnages the color every new key in order to keep a change if the random key is the same as the last
 // it also keeps a track of the amount of keys shown when the count hits 40 the game ends.
     function newKey() {
         timesRun += 1;
-        console.log(timesRun);
         if (timesRun === 41){
             clearInterval(interval);  
             body.removeEventListener('keydown', keyPress); 
@@ -280,10 +274,8 @@ function startTheGame(event) {
         }
        //This condition produces the random key and chnages the color every new key in order to keep a change if the random key is the same as the last
        if (timesRun != 41){
-            console.log("first if works");
             if(difficultyArray[x] == 'easy'){
                 let i = Math.floor(Math.random() * (33-0+1));
-                    console.log(i);
                     title.innerHTML = keyArray[i];
                 if(title.style.color == "red"){
                     title.style.color = "blue";
@@ -294,7 +286,6 @@ function startTheGame(event) {
         }
         if(difficultyArray[x] == 'hard'){
             let i = Math.floor(Math.random() * (50-0+1));
-                console.log(i);
                 title.innerHTML = keyArrayHard[i];
             if(title.style.color == "red"){
                 title.style.color = "blue";
@@ -316,7 +307,6 @@ function startTheGame(event) {
         if (event.key == title.innerHTML) {
             var audio = new Audio("assets/audio/correct.mp3");
                 audio.play();
-                console.log(event.key);
             let score = document.getElementById("counter");
                 score.innerHTML++;
         } else { if(event.shiftKey){return false}
@@ -355,12 +345,9 @@ function endGame() {
                 audio.play();
     }    
         title.remove();
-        console.log("end reached");
     let dArray = difficultyArray.push() - 1;
 // the users name is then pulled from the array, the score is added and then put to the relevent table.
-        console.log(userArray);
     let x = userArray.push() - 1;
-        console.log(userArray[x] + ': ' + finalScore);
     let leaderboard = document.getElementById("leaderboard");
     let leaderboardHard = document.getElementById("leaderboard-hard");
     let newRow = document.createElement("tr");
@@ -378,7 +365,6 @@ function endGame() {
         gameData.appendChild(newName);
     let newScore = document.createElement("td");
         newScore.innerHTML = finalScore;
-        console.log(newScore);
         gameData.appendChild(newScore);
     //create a button that returns back to the original user input for replayability
     let returnToMenuDiv = document.getElementById("menu-game-screen");
@@ -445,7 +431,6 @@ function resetMenu(event) {
         screen.appendChild(newMenu);
 // the fail icons are reset to green.   
     for (let i = 1; i < 6; i++){
-        console.log(i);
         let failReset = document.getElementsByClassName('fail');
             failReset.namedItem(i).style.color = "greenyellow";
             failReset.namedItem(i).style.borderColor = "white";

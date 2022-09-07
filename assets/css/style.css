@@ -83,13 +83,14 @@ header{
 #submit{
     height:75px;
 }
+/*simple hover effects*/
 #submit:hover{
     scale:1.05;
 }
 #playButton:hover{
     scale:1.05;
 }
-
+/*style for the input that appears on mobile*/
 #hidden{
     margin:0 auto;
     height: 50px;
@@ -99,7 +100,7 @@ header{
 }
 
 
-/*Ensdure the text inputted follows the style of the site*/
+/*Ensure the text inputted follows the style of the site*/
 #username{
     text-transform: uppercase;
     font-family: inherit;

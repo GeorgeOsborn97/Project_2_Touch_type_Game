@@ -38,7 +38,6 @@ Find a link to the deployed site [here](https://georgeosborn97.github.io/Project
    - [Mobile results](#mobile-results)
    - [Manual testing](#manual-testing)
    - [Device testing](#device-testing)
-   - [user feedback](#user-feedback)
 6. [Deployment](#deployment)
 7. [Credits/Acknowledgments](#creditsacknowledgments)
    - [Content](#content)
@@ -193,7 +192,7 @@ In order to test responsive elements throughout the development process Chrome D
    - What was the outcome? The form was removed and all the new elements were added correctly with the correct styling.
    - Fixes? None required.
 * The countdown starts on play:
-   - What was expected? When the play button is interacted with the h1 elements content changes to a 5 and then reduces by 1 in set interval until it hits 0 where in the p is removed, and the title is restyled and says 'GO!'/
+   - What was expected? When the play button is interacted with, the h1 elements content changes to a 5 and then reduces by 1 in set interval until it hits 0 where in the p is removed, and the title is restyled and says 'GO!'.
    - How it was tested? The play button was clicked.
    - What was the outcome? The Countdown initiated as expected and at the end of the countdown the relevant elements were removed and or restyled correctly.
    - Fixes? None required.
